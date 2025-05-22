@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 225 82% 52%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5.9% 96.1%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 225 82% 52%;
+    --chart-1: 225 82% 52%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --grid-size: 40px;
+    --grid-color: 240 10% 90%;
+    --footer-grid-color: 240 10% 20%;
+  }
+  .dark {
+    --background: 240 10% 5%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 225 70% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 225 70% 60%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --grid-color: 240 10% 25%;
+    --footer-grid-color: 240 10% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground relative min-h-screen;
+  }
+  
+  /* Grid background */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(to right, hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--grid-color)) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Footer grid pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--footer-grid-color)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--footer-grid-color)) 1px, transparent 1px);
+    background-size: calc(var(--grid-size) / 1.5) calc(var(--grid-size) / 1.5);
+  }
+}
+
+/* Add text-gradient class for the hero section */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-600 to-purple-600;
+}
+
+/* Add pulsating glow effect */
+.pulse-glow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 0.5rem hsla(var(--primary), 0.1));
+  }
+  50% {
+    filter: drop-shadow(0 0 1rem hsla(var(--primary), 0.3));
+  }
+}
+
+/* Styled card components */
+.card-hover {
+  @apply bg-card border border-border rounded-xl shadow-sm transition-all duration-300;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background: linear-gradient(225deg, 
+    hsla(var(--primary), 0.1), 
+    transparent 40%);
+  transition: opacity 0.3s ease;
+}
+
+.card-hover:hover {
+  @apply shadow-md border-primary/20;
+  transform: translateY(-2px);
+}
+
+.card-hover:hover::after {
+  opacity: 1;
+}
+
+.service-item {
+  @apply relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:shadow-lg card-hover;
+}
+
+.service-item::before {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-300;
+}
+
+.service-item:nth-child(3n + 1)::before {
+  @apply from-primary/10 to-blue-500/5 dark:from-primary/20 dark:to-blue-500/10;
+}
+
+.service-item:nth-child(3n + 2)::before {
+  @apply from-purple-500/10 to-pink-500/5 dark:from-purple-500/20 dark:to-pink-500/10;
+}
+
+.service-item:nth-child(3n + 3)::before {
+  @apply from-amber-500/10 to-yellow-500/5 dark:from-amber-500/20 dark:to-yellow-500/10;
+}
+
+.service-item:hover::before {
+  @apply opacity-100;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+/* Glowing dots in background */
+.glow-dots {
+  @apply fixed w-full h-full top-0 left-0 -z-10 overflow-hidden;
+  pointer-events: none;
+}
+
+.glow-dot {
+  @apply absolute rounded-full;
+  background: radial-gradient(circle, hsla(var(--primary), 0.5) 0%, transparent 70%);
+  filter: blur(15px);
+  opacity: 0.1;
+  animation: float 10s infinite;
+}
+
+.glow-dot:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 10%;
+  animation-duration: 15s;
+}
+
+.glow-dot:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  left: 80%;
+  animation-duration: 18s;
+}
+
+.glow-dot:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  top: 30%;
+  left: 60%;
+  animation-duration: 12s;
+}
+
+.glow-dot:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  top: 70%;
+  left: 20%;
+  animation-duration: 20s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(5px, -5px);
+  }
+  75% {
+    transform: translate(-10px, 5px);
+  }
+}
