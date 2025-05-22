@@ -70,7 +70,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-3">
             <ModeToggle />
-            <Button asChild variant="gradient" className="hidden md:inline-flex bg-[#186af2]  text-white">
+            <Button asChild variant="default" className="hidden md:inline-flex bg-[#186af2]  text-white">
               <Link href="/contact">احصل على استشارة مجانية</Link>
             </Button>
 
@@ -128,7 +128,7 @@ export function Navbar() {
             اتصل بنا
           </Link>
           <div className="pt-4">
-            <Button asChild variant="gradient" className="w-full bg-[#186af2] text-white">
+            <Button asChild variant="default" className="w-full bg-[#186af2] text-white">
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                 احصل على استشارة مجانية
               </Link>
