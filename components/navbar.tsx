@@ -32,37 +32,37 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-gradient pulse-glow">الفشني</span>
+            <span className="text-2xl font-bold text-[#186af2] pulse-glow">الفشني</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1 space-x-reverse">
             <Link
               href="/"
-              className="px-3 py-2 text-foreground hover:text-primary rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+              className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
               الرئيسية
             </Link>
             <Link
               href="/portfolio"
-              className="px-3 py-2 text-foreground hover:text-primary rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+              className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
               معرض الأعمال
             </Link>
             <Link
               href="/services"
-              className="px-3 py-2 text-foreground hover:text-primary rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+              className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
               خدماتنا
             </Link>
             <Link
               href="/about"
-              className="px-3 py-2 text-foreground hover:text-primary rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+              className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
               من نحن
             </Link>
             <Link
               href="/contact"
-              className="px-3 py-2 text-foreground hover:text-primary rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+              className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
               اتصل بنا
             </Link>
@@ -70,13 +70,13 @@ export function Navbar() {
 
           <div className="flex items-center gap-3">
             <ModeToggle />
-            <Button asChild variant="gradient" className="hidden md:inline-flex">
+            <Button asChild variant="gradient" className="hidden md:inline-flex bg-[#186af2]  text-white">
               <Link href="/contact">احصل على استشارة مجانية</Link>
             </Button>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex md:hidden items-center justify-center p-2 rounded-md text-foreground hover:text-primary focus:outline-none transition-colors"
+              className="inline-flex md:hidden items-center justify-center p-2 rounded-md text-foreground hover:text-[#186af2] focus:outline-none transition-colors"
             >
               <span className="sr-only">فتح القائمة</span>
               {isMenuOpen ? (
@@ -94,41 +94,41 @@ export function Navbar() {
         <div className="px-2 pt-2 pb-3 space-y-1 bg-background/90 backdrop-blur-md shadow-lg border-b border-border">
           <Link
             href="/"
-            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             الرئيسية
           </Link>
           <Link
             href="/portfolio"
-            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             معرض الأعمال
           </Link>
           <Link
             href="/services"
-            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             خدماتنا
           </Link>
           <Link
             href="/about"
-            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             من نحن
           </Link>
           <Link
             href="/contact"
-            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+            className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             اتصل بنا
           </Link>
           <div className="pt-4">
-            <Button asChild variant="gradient" className="w-full">
+            <Button asChild variant="gradient" className="w-full bg-[#186af2] text-white">
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                 احصل على استشارة مجانية
               </Link>

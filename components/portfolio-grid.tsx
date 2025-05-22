@@ -216,7 +216,7 @@ export function PortfolioGrid({ categoryFilter = "all", searchQuery = "" }: Port
                 {/* Featured badge */}
                 {project.featured && (
                   <div className="absolute top-3 right-3 z-10">
-                    <span className="bg-amber-500 text-white text-xs px-2 py-1 rounded-full">
+                    <span className="bg-[#fabc05] text-white text-xs px-2 py-1 rounded-full">
                       مميز
                     </span>
                   </div>

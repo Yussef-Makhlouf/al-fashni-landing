@@ -8,40 +8,40 @@ interface CtaBannerProps {
   description: string
   buttonText: string
   buttonLink: string
-  variant?: "blue" | "purple" | "indigo" | "amber" | "dark"
+  variant?: "blue" | "red" | "yellow" | "green" | "dark"
 }
 
-export function CtaBanner({ title, description, buttonText, buttonLink, variant = "indigo" }: CtaBannerProps) {
+export function CtaBanner({ title, description, buttonText, buttonLink, variant = "blue" }: CtaBannerProps) {
   const bgClasses = {
-    blue: "from-blue-600/95 via-blue-500/90 to-blue-400/80 dark:from-blue-800/95 dark:via-blue-700/90 dark:to-blue-600/80",
-    purple: "from-purple-600/95 via-purple-500/90 to-purple-400/80 dark:from-purple-800/95 dark:via-purple-700/90 dark:to-purple-600/80",
-    indigo: "from-indigo-600/95 via-indigo-500/90 to-indigo-400/80 dark:from-indigo-800/95 dark:via-indigo-700/90 dark:to-indigo-600/80", 
-    amber: "from-amber-600/95 via-amber-500/90 to-amber-400/80 dark:from-amber-800/95 dark:via-amber-700/90 dark:to-amber-600/80",
-    dark: "from-gray-900/95 via-gray-800/90 to-gray-700/80 dark:from-gray-950/95 dark:via-gray-900/90 dark:to-gray-800/80",
+    blue: "from-[#186af2]/95 via-[#186af2]/90 to-[#186af2]/80 dark:from-[#186af2]/95 dark:via-[#186af2]/90 dark:to-[#186af2]/80",
+    red: "from-[#ea4235]/95 via-[#ea4235]/90 to-[#ea4235]/80 dark:from-[#ea4235]/95 dark:via-[#ea4235]/90 dark:to-[#ea4235]/80",
+    yellow: "from-[#fabc05]/95 via-[#fabc05]/90 to-[#fabc05]/80 dark:from-[#fabc05]/95 dark:via-[#fabc05]/90 dark:to-[#fabc05]/80",
+    green: "from-[#34a853]/95 via-[#34a853]/90 to-[#34a853]/80 dark:from-[#34a853]/95 dark:via-[#34a853]/90 dark:to-[#34a853]/80",
+    dark: "from-[#111111]/95 via-[#111111]/90 to-[#111111]/80 dark:from-[#111111]/95 dark:via-[#111111]/90 dark:to-[#111111]/80",
   }
 
   const titleClasses = {
     blue: "text-white dark:text-white",
-    purple: "text-white dark:text-white",
-    indigo: "text-white dark:text-white",
-    amber: "text-white dark:text-white",
+    red: "text-white dark:text-white",
+    yellow: "text-white dark:text-white",
+    green: "text-white dark:text-white",
     dark: "text-white dark:text-white",
   }
 
   const descriptionClasses = {
     blue: "text-white/90 dark:text-white/90",
-    purple: "text-white/90 dark:text-white/90",
-    indigo: "text-white/90 dark:text-white/90",
-    amber: "text-white/90 dark:text-white/90",
+    red: "text-white/90 dark:text-white/90",
+    yellow: "text-white/90 dark:text-white/90",
+    green: "text-white/90 dark:text-white/90",
     dark: "text-white/90 dark:text-white/90",
   }
 
   const buttonClasses = {
-    blue: "bg-white text-blue-600 hover:bg-blue-50 dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700 font-medium",
-    purple: "bg-white text-purple-600 hover:bg-purple-50 dark:bg-purple-600 dark:text-white dark:hover:bg-purple-700 font-medium",
-    indigo: "bg-white text-indigo-600 hover:bg-indigo-50 dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700 font-medium",
-    amber: "bg-white text-amber-600 hover:bg-amber-50 dark:bg-amber-600 dark:text-white dark:hover:bg-amber-700 font-medium",
-    dark: "bg-white text-gray-900 hover:bg-gray-100 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 font-medium",
+    blue: "bg-white text-[#186af2] hover:bg-blue-50 dark:bg-[#186af2] dark:text-white dark:hover:bg-[#186af2]/90 font-medium",
+    red: "bg-white text-[#ea4235] hover:bg-red-50 dark:bg-[#ea4235] dark:text-white dark:hover:bg-[#ea4235]/90 font-medium",
+    yellow: "bg-white text-[#fabc05] hover:bg-yellow-50 dark:bg-[#fabc05] dark:text-white dark:hover:bg-[#fabc05]/90 font-medium",
+    green: "bg-white text-[#34a853] hover:bg-green-50 dark:bg-[#34a853] dark:text-white dark:hover:bg-[#34a853]/90 font-medium",
+    dark: "bg-white text-[#111111] hover:bg-gray-100 dark:bg-white dark:text-[#111111] dark:hover:bg-gray-200 font-medium",
   }
 
   return (

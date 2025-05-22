@@ -48,13 +48,13 @@ export function FeaturedProjects() {
       <div className="container px-4 mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">أحدث مشاريعنا</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-[#186af2]">أحدث مشاريعنا</h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
               نفخر بتقديم مجموعة متنوعة من المشاريع التي نفذناها لعملائنا في مختلف المجالات
             </p>
           </div>
 
-          <Button asChild className="mt-6 md:mt-0 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 border-0 shadow-md hover:shadow-lg transition-all">
+          <Button asChild className="mt-6 md:mt-0 bg-[#186af2] text-white border-0 shadow-md hover:shadow-lg transition-all">
             <Link href="/portfolio">
               عرض جميع المشاريع
               <ChevronLeft className="mr-2 h-4 w-4" />
@@ -71,7 +71,7 @@ export function FeaturedProjects() {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent backdrop-blur-sm flex flex-col justify-end p-6">
-              <span className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm px-4 py-1 rounded-full mb-3 shadow-md">
+              <span className="inline-block bg-[#186af2] text-white text-sm px-4 py-1 rounded-full mb-3 shadow-md">
                 {projects[activeProject].category}
               </span>
               <h3 className="text-white text-xl md:text-2xl font-bold mb-2">{projects[activeProject].title}</h3>
@@ -85,7 +85,7 @@ export function FeaturedProjects() {
                 key={project.id}
                 className={`p-6 rounded-xl cursor-pointer transition-all duration-300 border ${
                   activeProject === index
-                    ? "bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border-indigo-200 dark:border-indigo-700"
+                    ? "bg-gradient-to-r from-[#186af2]/10 to-[#ea4235]/10 dark:from-[#186af2]/20 dark:to-[#ea4235]/20 border-[#186af2] dark:border-[#186af2]"
                     : "hover:bg-gray-50 dark:hover:bg-gray-800/30 border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                 }`}
                 onClick={() => setActiveProject(index)}
@@ -103,13 +103,13 @@ export function FeaturedProjects() {
                   </div>
 
                   <div className="flex-1">
-                    <span className="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">{project.category}</span>
+                    <span className="text-sm font-medium bg-clip-text text-transparent bg-[#186af2]">{project.category}</span>
                     <h3 className="font-bold mb-2 text-gray-900 dark:text-gray-100">{project.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">{project.description}</p>
                   </div>
 
                   {activeProject === index && (
-                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#186af2] rounded-full flex items-center justify-center text-white">
                       <ArrowRight className="h-4 w-4" />
                     </div>
                   )}

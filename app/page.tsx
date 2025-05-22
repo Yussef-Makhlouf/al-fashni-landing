@@ -23,7 +23,7 @@ export default function Home() {
         title="هذه صفحة معرض أعمال شركة الفشني"
         description="تصفح مشاريعنا المميزة واكتشف كيف يمكننا مساعدة علامتك التجارية على النمو"
         buttonText="زيارة موقعنا الرئيسي"
-        buttonLink="https://al-fashni.com"
+        buttonLink="https://fashne.net/"
         variant="blue"
       />
 
@@ -39,7 +39,7 @@ export default function Home() {
         description="دعنا نساعدك في تحقيق أهدافك التسويقية وبناء حضور رقمي قوي"
         buttonText="تواصل معنا الآن"
         buttonLink="/contact"
-        variant="purple"
+        variant="red"
       />
 
       {/* Testimonials Section */}
@@ -50,7 +50,7 @@ export default function Home() {
         title="هذه صفحة معرض أعمال شركة الفشني للإعلان والعلاقات العامة"
         description="تواصل معنا اليوم لمناقشة مشروعك القادم ودعنا نساعدك في تحقيق رؤيتك"
         buttonText="زيارة موقعنا الرئيسي"
-        buttonLink="https://al-fashni.com"
+        buttonLink="https://fashne.net/"
         variant="dark"
       />
 
