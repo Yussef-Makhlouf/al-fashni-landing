@@ -26,28 +26,28 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "موقع شركة التقنية المتطورة",
-    category: "تطوير الويب",
+    title: "مــوقــع شــركــة التــقــنــيــة المــتــطــورة",
+    category: "تــطــويــر الــويــب",
     categoryId: "web-development",
     image: "/placeholder.svg?height=400&width=600&text=Project1",
     description:
-      "تصميم وتطوير موقع إلكتروني متكامل لشركة متخصصة في مجال التقنية، مع لوحة تحكم متطورة وواجهة مستخدم سهلة الاستخدام.",
+      "تــصــمــيــم وتــطــويــر مــوقــع إلــكــتــرونــي مــتــكــامــل لــشــركــة مــتــخــصــصــة فــي مــجــال التــقــنــيــة، مــع لــوحــة تــحــكــم مــتــطــورة وواجــهــة مــســتــخــدم ســهــلــة الاســتــخــدام.",
     link: "#",
-    tags: ["تطوير الويب", "تصميم واجهة المستخدم", "لوحة تحكم"],
+    tags: ["تــطــويــر الــويــب", "تــصــمــيــم واجــهــة المــســتــخــدم", "لــوحــة تــحــكــم"],
     featured: true,
-    client: "شركة التقنية المتطورة",
+    client: "شــركــة التــقــنــيــة المــتــطــورة",
     completionDate: "2023-05-15",
   },
   {
     id: 2,
-    title: "متجر الأناقة الإلكتروني",
-    category: "التجارة الإلكترونية",
+    title: "مــتــجــر الأنــاقــة الإلــكــتــرونــي",
+    category: "التــجــارة الإلــكــتــرونــيــة",
     categoryId: "ecommerce",
     image: "/placeholder.svg?height=400&width=600&text=Project2",
-    description: "تطوير متجر إلكتروني متكامل مع نظام دفع آمن وإدارة للمخزون وتجربة تسوق سلسة على جميع الأجهزة.",
+    description: "تــطــويــر مــتــجــر إلــكــتــرونــي مــتــكــامــل مــع نــظــام دفــع آمــن وإدارة لــلــمــخــزون وتــجــربــة تــســوق ســلــســة عــلــى جــمــيــع الأجــهــزة.",
     link: "#",
-    tags: ["التجارة الإلكترونية", "تطوير الويب", "تجربة المستخدم"],
-    client: "مؤسسة الأناقة للأزياء",
+    tags: ["التــجــارة الإلــكــتــرونــيــة", "تــطــويــر الــويــب", "تــجــربــة المــســتــخــدم"],
+    client: "مــؤســســة الأنــاقــة لــلأزيــاء",
     completionDate: "2023-07-22",
   },
   {
@@ -217,7 +217,7 @@ export function PortfolioGrid({ categoryFilter = "all", searchQuery = "" }: Port
                 {project.featured && (
                   <div className="absolute top-3 right-3 z-10">
                     <span className="bg-[#fabc05] text-white text-xs px-2 py-1 rounded-full">
-                      مميز
+                      مــمــيــز
                     </span>
                   </div>
                 )}
@@ -251,7 +251,7 @@ export function PortfolioGrid({ categoryFilter = "all", searchQuery = "" }: Port
                       href={`/portfolio/${project.id}`}
                       className="text-white group-hover:text-[#186af2] text-sm font-medium inline-flex items-center gap-1"
                     >
-                      عرض المشروع
+                      عــرض المــشــروع
                       <ExternalLink className="h-3 w-3" />
                     </Link>
                   </div>
@@ -276,7 +276,7 @@ export function PortfolioGrid({ categoryFilter = "all", searchQuery = "" }: Port
                 <div className="mt-auto flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 pt-2 border-t border-gray-100 dark:border-gray-700">
                   {project.client && (
                     <div>
-                      <span className="font-medium">العميل:</span> {project.client}
+                      <span className="font-medium">الــعــمــيــل:</span> {project.client}
                     </div>
                   )}
                   

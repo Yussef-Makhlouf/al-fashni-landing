@@ -67,7 +67,7 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        cairo: ["var(--font-cairo)"],
+        handicrafts: ["var(--font-handicrafts)"],
       },
       keyframes: {
         "accordion-down": {

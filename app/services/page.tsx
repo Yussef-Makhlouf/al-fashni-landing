@@ -21,10 +21,18 @@ import {
   Award,
   Clock,
   Zap,
-  ExternalLink
+  ExternalLink,
+  Code,
+  Server,
+  Database,
+  Cpu,
+  Lightbulb,
+  Target
 } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
+import { ServicesList } from "@/components/services-list"
+import { CtaBanner } from "@/components/cta-banner"
 
 // Interface definitions
 interface Service {
@@ -44,25 +52,92 @@ interface FeatureCardProps {
   description: string;
 }
 
-// Network Background Component
+// Network Background Component with enhanced grid pattern
 function NetworkBackground() {
   return (
-    <div className="network-background absolute inset-0 w-full h-full opacity-30 dark:opacity-10">
+    <div className="network-background absolute inset-0 w-full h-full opacity-30 dark:opacity-20">
       <style jsx>{`
         .network-background {
-          background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-                            radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-          background-size: 40px 40px;
-          background-position: 0 0, 20px 20px;
+          background-image: 
+            linear-gradient(to right, rgba(24, 106, 242, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(24, 106, 242, 0.1) 1px, transparent 1px),
+            radial-gradient(rgba(24, 106, 242, 0.15) 2px, transparent 2px);
+          background-size: 50px 50px, 50px 50px, 100px 100px;
+          background-position: 0 0, 0 0, 25px 25px;
         }
         
         @media (prefers-color-scheme: dark) {
           .network-background {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                              radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-image: 
+              linear-gradient(to right, rgba(56, 189, 248, 0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(56, 189, 248, 0.1) 1px, transparent 1px),
+              radial-gradient(rgba(56, 189, 248, 0.2) 2px, transparent 2px);
           }
         }
       `}</style>
+    </div>
+  );
+}
+
+// Tech Decorative Elements Component
+function TechDecorativeElements() {
+  return (
+    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      {/* Code brackets */}
+      <motion.div 
+        className="absolute top-[15%] left-[5%] text-blue-500/20 dark:text-blue-400/10 text-7xl font-mono"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay: 0.2 }}
+      >
+        {"</>"}
+      </motion.div>
+      
+      <motion.div 
+        className="absolute bottom-[20%] right-[8%] text-purple-500/20 dark:text-purple-400/10 text-7xl font-mono"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay: 0.4 }}
+      >
+        {"{}"}
+      </motion.div>
+      
+      {/* Floating tech icons */}
+      <motion.div 
+        className="absolute top-[30%] right-[15%]"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 0.2, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <Database className="h-16 w-16 text-green-500/30 dark:text-green-400/20" />
+      </motion.div>
+      
+      <motion.div 
+        className="absolute bottom-[35%] left-[12%]"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 0.2, y: 0 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
+        <Server className="h-14 w-14 text-amber-500/30 dark:text-amber-400/20" />
+      </motion.div>
+      
+      <motion.div 
+        className="absolute top-[60%] left-[20%]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.2 }}
+        transition={{ duration: 1, delay: 0.6 }}
+      >
+        <Cpu className="h-12 w-12 text-red-500/30 dark:text-red-400/20" />
+      </motion.div>
+      
+      {/* Binary code effect */}
+      <div className="absolute top-[10%] right-[10%] font-mono text-xs opacity-10 dark:opacity-5 text-blue-800 dark:text-blue-200">
+        10101<br />01010<br />11001<br />00101
+      </div>
+      
+      <div className="absolute bottom-[15%] left-[15%] font-mono text-xs opacity-10 dark:opacity-5 text-purple-800 dark:text-purple-200">
+        01100<br />10011<br />01010<br />11001
+      </div>
     </div>
   );
 }
@@ -85,425 +160,110 @@ function StatCard({ number, text }: { number: string; text: string }) {
 
 export default function ServicesPage() {
   return (
-    <>
-      <style jsx global>{`
-        .bg-grid-pattern {
-          background-size: 30px 30px;
-          background-image: 
-            linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-        }
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        {/* Glowing elements */}
+        <div className="absolute top-20 left-10 w-80 h-80 rounded-full bg-[#186af2]/20 blur-3xl opacity-30"></div>
+        <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-[#ea4235]/20 blur-3xl opacity-30"></div>
         
-        @media (prefers-color-scheme: dark) {
-          .bg-grid-pattern {
-            background-image: 
-              linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-          }
-        }
-      `}</style>
-    
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900 relative overflow-hidden">
-        {/* Network Background Effect */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 z-0">
-            <NetworkBackground />
+        <div className="container px-4 mx-auto relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-block bg-[#186af2] text-white rounded-full px-6 py-2 mb-6 shadow-md hover:shadow-lg transition-all">
+              <span className="font-medium">خــدمــاتــنــا</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
+              حــلــول <span className="text-[#186af2] pulse-glow">إبــداعــيــة</span> 
+              <br className="hidden md:block" />لــنــمــو أعــمــالــك
+            </h1>
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+              نــقــدم مــجــمــوعــة مــتــكــامــلــة مــن الخــدمــات الإبــداعــيــة والتــســويــقــيــة المــصــمــمــة خــصــيــصــاً لــمــســاعــدة عــلامــتــك التــجــاريــة عــلــى التــمــيــز والنــمــو
+            </p>
           </div>
         </div>
-        
-        <Navbar />
-        
-        {/* Hero Section with enhanced design */}
-        <section className="pt-32 pb-20 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-br from-blue-600/10 to-purple-600/10 dark:from-blue-900/20 dark:to-purple-900/20 backdrop-blur-3xl -z-10"></div>
+      </section>
+      
+      {/* Services Section */}
+      <section className="py-16">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">خــدمــاتــنــا <span className="text-[#186af2]">المــتــمــيــزة</span></h2>
+            <p className="text-muted-foreground">
+              نــقــدم بــاقــة مــتــنــوعــة مــن الخــدمــات الاحــتــرافــيــة الــتــي تــلــبــي احــتــيــاجــات عــمــلائــنــا فــي مــخــتــلــف المــجــالات
+            </p>
+          </div>
           
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div 
-              className="max-w-4xl mx-auto text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="mb-6 inline-flex items-center px-4 py-2 rounded-full bg-blue-100/80 dark:bg-blue-900/30 backdrop-blur-md text-blue-700 dark:text-blue-300 text-sm font-medium">
-                <span className="flex h-2 w-2 mr-2">
-                  <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-blue-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
-                </span>
-                خدمات متكاملة لعملائنا المميزين
+          <ServicesList />
+        </div>
+      </section>
+      
+      {/* Our Approach Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-foreground">نــهــجــنــا <span className="text-[#186af2]">الــمــتــمــيــز</span></h2>
+            <p className="text-muted-foreground">
+              نــتــبــع مــنــهــجــيــة مــدروســة فــي تــنــفــيــذ مــشــاريــعــنــا لــضــمــان تــحــقــيــق أفــضــل النــتــائــج لــعــمــلائــنــا
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="bg-card p-6 rounded-lg shadow-md border border-border hover:border-[#186af2]/50 transition-all">
+              <div className="bg-[#186af2]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#186af2]/20">
+                <Lightbulb className="h-8 w-8 text-[#186af2]" />
               </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 leading-tight">
-                خدماتنا المتكاملة لنجاح <br /> مشروعك الرقمي
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
-                نقدم مجموعة شاملة من الخدمات الإبداعية والتسويقية المصممة خصيصاً لمساعدة علامتك التجارية 
-                <br className="hidden md:block" /> على التميز في العالم الرقمي وتحقيق أهدافك بكفاءة عالية
+              <h3 className="text-xl font-bold mb-3 text-foreground">الــفــهــم والتــحــلــيــل</h3>
+              <p className="text-muted-foreground">
+                نــبــدأ بــفــهــم احــتــيــاجــاتــك وتــحــلــيــل وضــعــك الــحــالــي والــســوق المــســتــهــدف لــتــحــديــد أفــضــل الاســتــراتــيــجــيــات
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" variant="gradient" className="gap-2 shadow-lg shadow-blue-500/20 dark:shadow-blue-900/30">
-                  تواصل معنا الآن
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                  >
-                    <ArrowRight className="h-5 w-5" />
-                  </motion.div>
-                </Button>
-                <Button size="lg" variant="outline" className="group backdrop-blur-sm bg-white/50 dark:bg-gray-900/50 border-gray-300 dark:border-gray-700">
-                  استكشف أعمالنا
-                  <ArrowRight className="mr-2 h-5 w-5 transition-transform group-hover:-translate-x-1" />
-                </Button>
-              </div>
-            </motion.div>
+            </div>
             
-            {/* Statistics Section */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              <StatCard number="250+" text="عميل سعيد" />
-              <StatCard number="540+" text="مشروع منجز" />
-              <StatCard number="12+" text="سنة خبرة" />
-              <StatCard number="98%" text="نسبة رضا العملاء" />
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Services Tabs */}
-        <section className="py-20 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">مجالات تخصصنا</h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                اختر من بين مجموعة خدماتنا المتخصصة لتنمية أعمالك وتعزيز حضورك الرقمي
+            <div className="bg-card p-6 rounded-lg shadow-md border border-border hover:border-[#ea4235]/50 transition-all">
+              <div className="bg-[#ea4235]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#ea4235]/20">
+                <Zap className="h-8 w-8 text-[#ea4235]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">التــخــطــيــط والإبــداع</h3>
+              <p className="text-muted-foreground">
+                نــضــع خــطــة عــمــل مــفــصــلــة ونــطــور أفــكــاراً إبــداعــيــة تــنــاســب هــويــتــك وتــحــقــق أهــدافــك
               </p>
             </div>
-
-            <Tabs defaultValue="digital" className="w-full">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                <TabsTrigger value="digital" className="data-[state=active]:bg-blue-50 data-[state=active]:text-blue-600 dark:data-[state=active]:bg-blue-950/30">التسويق الرقمي</TabsTrigger>
-                <TabsTrigger value="web" className="data-[state=active]:bg-purple-50 data-[state=active]:text-purple-600 dark:data-[state=active]:bg-purple-950/30">تطوير المواقع</TabsTrigger>
-                <TabsTrigger value="design" className="data-[state=active]:bg-green-50 data-[state=active]:text-green-600 dark:data-[state=active]:bg-green-950/30">التصميم والهوية</TabsTrigger>
-                <TabsTrigger value="mobile" className="data-[state=active]:bg-amber-50 data-[state=active]:text-amber-600 dark:data-[state=active]:bg-amber-950/30">تطبيقات الجوال</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="digital" className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4">استراتيجيات تسويقية مبتكرة</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      نقدم حلولاً تسويقية متكاملة مصممة خصيصاً لتلبية احتياجات عملك وتحقيق أهدافك. نستخدم أحدث التقنيات والاستراتيجيات لضمان وصول علامتك التجارية إلى الجمهور المستهدف.
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>إدارة حملات إعلانية مدفوعة</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>تحسين محركات البحث (SEO)</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>إدارة وسائل التواصل الاجتماعي</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>إنشاء محتوى جذاب وهادف</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="rounded-2xl overflow-hidden shadow-xl relative bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 aspect-video flex items-center justify-center p-10">
-                    <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
-                    <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-                    <img 
-                      src="/digital-marketing.svg" 
-                      alt="التسويق الرقمي" 
-                      className="w-full max-w-md mx-auto relative z-10"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src = "https://placehold.co/600x400/2563eb/FFFFFF?text=التسويق+الرقمي";
-                      }}
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="web" className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="rounded-2xl overflow-hidden shadow-xl relative bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 aspect-video flex items-center justify-center p-10 order-2 md:order-1">
-                    <div className="absolute -right-10 -top-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-                    <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl"></div>
-                    <img 
-                      src="/web-development.svg" 
-                      alt="تطوير المواقع" 
-                      className="w-full max-w-md mx-auto relative z-10"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src = "https://placehold.co/600x400/9333ea/FFFFFF?text=تطوير+المواقع";
-                      }}
-                    />
-                  </div>
-                  <div className="order-1 md:order-2">
-                    <h3 className="text-2xl font-bold mb-4">تطوير مواقع متطورة وعصرية</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      نصمم ونطور مواقع إلكترونية عصرية، سريعة، ومتجاوبة مع جميع الأجهزة. نركز على تجربة المستخدم وتحسين معدلات التحويل لتحقيق أهدافك التجارية.
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>مواقع تفاعلية متجاوبة مع جميع الأجهزة</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>متاجر إلكترونية متكاملة</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>تحسين سرعة التحميل وأداء الموقع</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>تجربة مستخدم سلسة وجذابة</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="design" className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4">هوية بصرية مميزة</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      نبتكر هويات بصرية فريدة تعكس روح علامتك التجارية وتميزها في السوق. نهتم بكل التفاصيل لضمان تماسك وتناسق الهوية في جميع نقاط التواصل مع العملاء.
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>تصميم شعارات فريدة ومميزة</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>أنظمة ألوان وخطوط متناسقة</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>تصميم مواد تسويقية مطبوعة ورقمية</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>دليل استخدام الهوية البصرية</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="rounded-2xl overflow-hidden shadow-xl relative bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/20 dark:to-teal-900/20 aspect-video flex items-center justify-center p-10">
-                    <div className="absolute -right-10 -top-10 w-40 h-40 bg-green-500/20 rounded-full blur-3xl"></div>
-                    <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl"></div>
-                    <img 
-                      src="/branding.svg" 
-                      alt="التصميم والهوية" 
-                      className="w-full max-w-md mx-auto relative z-10"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src = "https://placehold.co/600x400/10b981/FFFFFF?text=التصميم+والهوية";
-                      }}
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="mobile" className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="rounded-2xl overflow-hidden shadow-xl relative bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 aspect-video flex items-center justify-center p-10 order-2 md:order-1">
-                    <div className="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl"></div>
-                    <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-orange-500/20 rounded-full blur-3xl"></div>
-                    <img 
-                      src="/mobile-app.svg" 
-                      alt="تطبيقات الجوال" 
-                      className="w-full max-w-md mx-auto relative z-10"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src = "https://placehold.co/600x400/f59e0b/FFFFFF?text=تطبيقات+الجوال";
-                      }}
-                    />
-                  </div>
-                  <div className="order-1 md:order-2">
-                    <h3 className="text-2xl font-bold mb-4">تطبيقات جوال متطورة</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      نطور تطبيقات جوال مبتكرة وسهلة الاستخدام لنظامي iOS وAndroid. نركز على تقديم تجربة مستخدم متميزة وميزات تفاعلية تلبي احتياجات عملائك.
-                    </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>تطبيقات متوافقة مع iOS وAndroid</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>واجهات مستخدم سهلة وبديهية</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>دمج مع أنظمة الدفع والإشعارات</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>صيانة وتحديثات مستمرة</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-        </section>
-
-        {/* Interactive 3D Services Preview */}
-        <section className="py-20 relative overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <motion.span 
-                className="inline-block text-sm font-semibold text-purple-600 dark:text-purple-400 mb-2 bg-purple-100 dark:bg-purple-900/40 px-3 py-1 rounded-full"
-                initial={{ opacity: 0, y: -10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                تجربة تفاعلية
-              </motion.span>
-              <motion.h2 
-                className="text-3xl md:text-4xl font-bold mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                اكتشف خدماتنا بطريقة تفاعلية
-              </motion.h2>
-              <motion.p 
-                className="text-gray-600 dark:text-gray-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                استكشف الخدمات التي نقدمها بشكل تفاعلي ثلاثي الأبعاد وتعرف على مميزات كل خدمة
-              </motion.p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto py-10">
-              <ServicePreviewCard 
-                title="تطوير المواقع" 
-                icon={<Globe className="h-10 w-10 text-blue-500" />}
-                color="blue"
-              />
-              <ServicePreviewCard 
-                title="التسويق الرقمي" 
-                icon={<Megaphone className="h-10 w-10 text-red-500" />} 
-                color="red"
-              />
-              <ServicePreviewCard 
-                title="تطبيقات الجوال" 
-                icon={<Smartphone className="h-10 w-10 text-[#186af2]" />}
-                color="purple"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* All Services Grid */}
-        <section className="py-20 bg-gray-50 dark:bg-gray-800 relative">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <motion.span 
-                className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2 bg-blue-100 dark:bg-blue-900/40 px-3 py-1 rounded-full"
-                initial={{ opacity: 0, y: -10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                استكشف خدماتنا
-              </motion.span>
-              <motion.h2 
-                className="text-3xl md:text-4xl font-bold mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                مجموعة خدماتنا المتكاملة
-              </motion.h2>
-              <motion.p 
-                className="text-gray-600 dark:text-gray-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                اكتشف المجموعة الكاملة من خدماتنا المتخصصة لتنمية أعمالك وتحقيق أهدافك بأعلى معايير الجودة
-              </motion.p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service) => (
-                <ServiceCard key={service.id} service={service} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-20 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">لماذا تختار خدماتنا؟</h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                نحن ملتزمون بتقديم خدمات عالية الجودة تساعد علامتك التجارية على التميز
+            
+            <div className="bg-card p-6 rounded-lg shadow-md border border-border hover:border-[#fabc05]/50 transition-all">
+              <div className="bg-[#fabc05]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#fabc05]/20">
+                <Target className="h-8 w-8 text-[#fabc05]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">التــنــفــيــذ والتــطــويــر</h3>
+              <p className="text-muted-foreground">
+                نــنــفــذ المــشــروع وفــق أعــلــى مــعــايــيــر الــجــودة مــع الالــتــزام بــالــجــدول الــزمــنــي المــحــدد
               </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <FeatureCard 
-                icon={<Users className="h-8 w-8 text-blue-500" />}
-                title="فريق من الخبراء"
-                description="نضم فريقاً من المتخصصين ذوي الخبرة في مختلف المجالات لضمان تقديم أفضل النتائج"
-              />
-              <FeatureCard 
-                icon={<BarChart2 className="h-8 w-8 text-[#186af2]" />}
-                title="نتائج قابلة للقياس"
-                description="نقدم تقارير دورية تظهر أداء حملاتك ونتائج استراتيجياتنا بشكل واضح وشفاف"
-              />
-              <FeatureCard 
-                icon={<PenTool className="h-8 w-8 text-green-500" />}
-                title="حلول إبداعية"
-                description="نبتكر استراتيجيات وتصاميم فريدة تناسب هوية علامتك التجارية وتميزها عن المنافسين"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">جاهزون لنقل أعمالك إلى المستوى التالي؟</h2>
-              <p className="text-xl opacity-90 mb-10">
-                تواصل معنا اليوم لمناقشة مشروعك القادم ودعنا نساعدك في تحقيق رؤيتك
+            
+            <div className="bg-card p-6 rounded-lg shadow-md border border-border hover:border-[#34a853]/50 transition-all">
+              <div className="bg-[#34a853]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#34a853]/20">
+                <Users className="h-8 w-8 text-[#34a853]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">المــتــابــعــة والتــحــســيــن</h3>
+              <p className="text-muted-foreground">
+                نــقــدم دعــمــاً مــســتــمــراً ونــتــابــع الأداء لــتــحــســيــن النــتــائــج وضــمــان تــحــقــيــق الأهــداف المــرجــوة
               </p>
-              <Button size="lg" variant="outline" className="bg-white text-blue-600 hover:bg-blue-50">
-                احصل على استشارة مجانية
-              </Button>
             </div>
           </div>
-        </section>
-
-        <Footer />
-      </div>
-    </>
+        </div>
+      </section>
+      
+      {/* CTA Banner */}
+      <CtaBanner 
+        title="هــل تــحــتــاج إلــى خــدمــاتــنــا؟"
+        description="تــواصــل مــعــنــا الــيــوم لــمــنــاقــشــة مــشــروعــك وكــيــف يــمــكــنــنــا مــســاعــدتــك فــي تــحــقــيــق أهــدافــك"
+        buttonText="احــصــل عــلــى اســتــشــارة مــجــانــيــة"
+        buttonLink="/contact"
+        variant="blue"
+      />
+      
+      <Footer />
+    </div>
   )
 }
 
@@ -525,7 +285,7 @@ function ServiceCard({ service }: { service: Service }) {
     >
       <div className={`absolute inset-0 transition-opacity duration-300 ${service.bgColor} opacity-30 dark:opacity-20`} />
       
-      <div className="relative z-10 p-6 flex flex-col h-full">
+      <div className="relative z-10 p-6 flex flex-col h-full" dir="rtl" >
         <div className={`w-16 h-16 rounded-lg flex items-center justify-center mb-4 ${service.bgColor} dark:bg-opacity-30`}>
           <service.icon className={`h-8 w-8 ${service.color}`} />
         </div>

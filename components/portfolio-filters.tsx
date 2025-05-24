@@ -7,14 +7,14 @@ import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 
 export const categories = [
-  { id: "all", name: "الكل" },
-  { id: "web-development", name: "تطوير الويب" },
-  { id: "ecommerce", name: "التجارة الإلكترونية" },
-  { id: "digital-marketing", name: "التسويق الرقمي" },
-  { id: "mobile-apps", name: "تطبيقات الجوال" },
-  { id: "branding", name: "الهوية البصرية" },
-  { id: "advertising", name: "الإعلان" },
-  { id: "seo", name: "تحسين محركات البحث" },
+  { id: "all", name: "الــكــل" },
+  { id: "web-development", name: "تــطــويــر الــويــب" },
+  { id: "ecommerce", name: "التــجــارة الإلــكــتــرونــيــة" },
+  { id: "digital-marketing", name: "التــســويــق الــرقــمــي" },
+  { id: "mobile-apps", name: "تــطــبــيــقــات الــجــوال" },
+  { id: "branding", name: "الــهــويــة البــصــريــة" },
+  { id: "advertising", name: "الإعــلان" },
+  { id: "seo", name: "تــحــســيــن مــحــركــات البــحــث" },
 ]
 
 export type PortfolioFiltersProps = {
@@ -43,13 +43,13 @@ export function PortfolioFilters({ onFilterChange }: PortfolioFiltersProps) {
   return (
     <div className="mb-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-        <h2 className="text-2xl font-bold">استعرض مشاريعنا</h2>
+        <h2 className="text-2xl font-bold">اســتــعــرض مــشــاريــعــنــا</h2>
 
         <div className="relative w-full md:w-64">
           <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" />
           <Input 
             type="text" 
-            placeholder="ابحث عن مشروع..." 
+            placeholder="ابــحــث عــن مــشــروع..." 
             className="pr-10 w-full" 
             value={searchQuery}
             onChange={handleSearchChange}

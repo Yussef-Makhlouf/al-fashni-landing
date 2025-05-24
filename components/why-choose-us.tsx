@@ -1,7 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Award, Users, Lightbulb, TrendingUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, Award, Users, Target, Lightbulb, TrendingUp, CheckCircle } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 const reasons = [
   {
@@ -40,33 +43,54 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20">
+    <section className="py-16 bg-muted/30">
       <div className="container px-4 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">لماذا تختار الفشني؟</h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            نحن ملتزمون بتقديم أفضل الخدمات لعملائنا ومساعدتهم على تحقيق أهدافهم التسويقية
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">لــمــاذا <span className="text-[#186af2]">تــخــتــارنــا؟</span></h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            نــحــن نــتــمــيــز بــمــجــمــوعــة مــن الخــصــائــص الــتــي تــجــعــلــنــا الخــيــار الأمــثــل لــشــركــائــنــا وعــمــلائــنــا
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {reasons.map((reason) => (
-            <motion.div
-              key={reason.id}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: reason.id * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${reason.bgColor}`}>
-                <reason.icon className={`h-6 w-6 ${reason.color}`} />
-              </div>
-
-              <h3 className="text-lg font-bold mb-2">{reason.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">{reason.description}</p>
-            </motion.div>
-          ))}
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-card p-6 rounded-lg shadow-md border border-border hover:border-[#186af2]/50 transition-all">
+            <div className="bg-[#186af2]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#186af2]/20">
+              <Award className="h-8 w-8 text-[#186af2]" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-foreground">الــتــمــيــز والإبــداع</h3>
+            <p className="text-muted-foreground">
+              نــســعــى دائــمــاً لــتــقــديــم أفــكــار مــبــتــكــرة وحــلــول إبــداعــيــة تــتــجــاوز تــوقــعــات عــمــلائــنــا وتــحــقــق أهــدافــهــم بــطــرق غــيــر تــقــلــيــديــة
+            </p>
+          </div>
+          
+          <div className="bg-card p-6 rounded-lg shadow-md border border-border hover:border-[#ea4235]/50 transition-all">
+            <div className="bg-[#ea4235]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#ea4235]/20">
+              <Users className="h-8 w-8 text-[#ea4235]" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-foreground">الــشــراكــة والــتــعــاون</h3>
+            <p className="text-muted-foreground">
+              نــؤمــن بــأهــمــيــة بــنــاء عــلاقــات قــويــة مــع عــمــلائــنــا، والــعــمــل كــشــركــاء حــقــيــقــيــيــن لــهــم فــي رحــلــة نــجــاحــهــم وتــطــورهــم
+            </p>
+          </div>
+          
+          <div className="bg-card p-6 rounded-lg shadow-md border border-border hover:border-[#fabc05]/50 transition-all">
+            <div className="bg-[#fabc05]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#fabc05]/20">
+              <Target className="h-8 w-8 text-[#fabc05]" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-foreground">الالــتــزام بــالــنــتــائــج</h3>
+            <p className="text-muted-foreground">
+              نــركــز عــلــى تــحــقــيــق نــتــائــج مــلــمــوســة وقــابــلــة لــلــقــيــاس لــعــمــلائــنــا، ونــتــحــمــل المــســؤولــيــة الــكــامــلــة عــن نــجــاح مــشــاريــعــنــا
+            </p>
+          </div>
+        </div>
+        
+        <div className="mt-10 text-center">
+          <Button asChild className="bg-[#186af2] text-white">
+            <Link href="/about">
+              تــعــرف عــلــيــنــا أكــثــر
+              <ChevronLeft className="mr-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

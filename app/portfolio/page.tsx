@@ -3,67 +3,62 @@
 import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { PortfolioGrid } from "@/components/portfolio-grid"
 import { PortfolioFilters } from "@/components/portfolio-filters"
+import { PortfolioGrid } from "@/components/portfolio-grid"
 import { CtaBanner } from "@/components/cta-banner"
-import { motion } from "framer-motion"
 
 export default function PortfolioPage() {
-  const [categoryFilter, setCategoryFilter] = useState("all")
+  const [activeCategory, setActiveCategory] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
 
-  // Handler for filter changes from the PortfolioFilters component
   const handleFilterChange = (category: string, query: string) => {
-    setCategoryFilter(category)
+    setActiveCategory(category)
     setSearchQuery(query)
   }
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-
+      
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#186af2]/10 via-white to-[#fabc05]/10 dark:from-[#186af2]/20 dark:via-gray-900 dark:to-[#fabc05]/20 pt-24 pb-12">
-        <div className="container px-4 mx-auto">
-          <motion.div 
-            className="max-w-3xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">معرض أعمالنا</h1>
-            <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
-              استعرض مجموعة من أفضل المشاريع التي قمنا بتنفيذها لعملائنا في مختلف المجالات
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        {/* Glowing elements */}
+        <div className="absolute top-20 left-10 w-80 h-80 rounded-full bg-[#186af2]/20 blur-3xl opacity-30"></div>
+        <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-[#ea4235]/20 blur-3xl opacity-30"></div>
+        
+        <div className="container px-4 mx-auto relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-block bg-[#186af2] text-white rounded-full px-6 py-2 mb-6 shadow-md hover:shadow-lg transition-all">
+              <span className="font-medium">مــعــرض أعــمــالــنــا</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
+              إبــداعــات <span className="text-[#186af2] pulse-glow">تــتــجــاوز</span> 
+              <br className="hidden md:block" />حــدود الــخــيــال
+            </h1>
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+              اســتــعــرض مــجــمــوعــة مــن أحــدث وأفــضــل مــشــاريــعــنــا الــتــي نــفــذنــاهــا لــعــمــلائــنــا فــي مــخــتــلــف المــجــالات
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
-
+      
       {/* Portfolio Section */}
-      <section className="pb-20 pt-4">
-        <div className="container mx-auto px-4">
+      <section className="py-16">
+        <div className="container px-4 mx-auto">
           <PortfolioFilters onFilterChange={handleFilterChange} />
-          
-          <motion.div 
-            className="mt-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-          >
-            <PortfolioGrid categoryFilter={categoryFilter} searchQuery={searchQuery} />
-          </motion.div>
+          <PortfolioGrid categoryFilter={activeCategory} searchQuery={searchQuery} />
         </div>
       </section>
-
+      
       {/* CTA Banner */}
-      <CtaBanner
-        title="هل لديك مشروع تريد تنفيذه؟"
-        description="دعنا نساعدك في تحويل أفكارك إلى واقع ملموس"
-        buttonText="تواصل معنا الآن"
+      <CtaBanner 
+        title="هــل تــريــد مــشــروعــاً مــمــيــزاً؟"
+        description="تــواصــل مــعــنــا الــيــوم لــمــنــاقــشــة مــشــروعــك وكــيــف يــمــكــنــنــا تــحــويــل أفــكــارك إلــى واقــع مــلــمــوس"
+        buttonText="تــواصــل مــعــنــا الآن"
         buttonLink="/contact"
         variant="blue"
       />
-
+      
       <Footer />
     </div>
   )

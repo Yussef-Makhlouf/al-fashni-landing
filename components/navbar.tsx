@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,8 +32,15 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-[#186af2] pulse-glow">الفشني</span>
+          <Link href="/" className="flex items-center gap-2">
+            <Image 
+              src="/logo.png"
+              alt="الفشني للإعلان والعلاقات العامة"
+              width={100}
+              height={100}
+              className="w-50 h-50"
+            />
+            <span className="text-2xl font-bold text-[#186af2] pulse-glow">الــفــشــنــي</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1 space-x-reverse">
@@ -40,39 +48,39 @@ export function Navbar() {
               href="/"
               className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
-              الرئيسية
+              الــرئــيــســيــة
             </Link>
             <Link
               href="/portfolio"
               className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
-              معرض الأعمال
+              مــعــرض الأعــمــال
             </Link>
             <Link
               href="/services"
               className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
-              خدماتنا
+              خــدمــاتــنــا
             </Link>
             <Link
               href="/about"
-              className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+              className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors re  ative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
-              من نحن
+              مــن نــحــن
             </Link>
             <Link
               href="/contact"
               className="px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#186af2] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
             >
-              اتصل بنا
+              اتــصــل بــنــا
             </Link>
           </nav>
 
           <div className="flex items-center gap-3">
             <ModeToggle />
             <Button asChild variant="default" className="hidden md:inline-flex bg-[#186af2]  text-white">
-              <Link href="/contact">احصل على استشارة مجانية</Link>
-            </Button>
+              <Link href="/contact">احــصــل عــلــى اســتــشــارة مــجــانــيــة</Link>
+            </Button> 
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -97,40 +105,40 @@ export function Navbar() {
             className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            الرئيسية
+            الــرئــيــســيــة
           </Link>
           <Link
             href="/portfolio"
             className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            معرض الأعمال
+            مــعــرض الأعــمــال
           </Link>
           <Link
             href="/services"
             className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            خدماتنا
+            خــدمــاتــنــا
           </Link>
           <Link
             href="/about"
             className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            من نحن
+            مــن نــحــن
           </Link>
           <Link
             href="/contact"
             className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-[#186af2]/10 hover:text-[#186af2] transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            اتصل بنا
+            اتــصــل بــنــا
           </Link>
           <div className="pt-4">
             <Button asChild variant="default" className="w-full bg-[#186af2] text-white">
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                احصل على استشارة مجانية
+                احــصــل عــلــى اســتــشــارة مــجــانــيــة
               </Link>
             </Button>
           </div>

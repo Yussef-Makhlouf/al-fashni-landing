@@ -6,16 +6,16 @@ export function TestimonialsSection() {
     <section className="py-20">
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">ماذا يقول عملاؤنا</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">مــاذا يــقــول عــمــلاؤنــا</h2>
           <p className="text-gray-600 dark:text-gray-300">
-            نفخر بالعمل مع مجموعة متنوعة من العملاء الذين وثقوا بنا لتحقيق أهدافهم
+            نــفــخــر بــالــعــمــل مــع مــجــمــوعــة مــتــنــوعــة مــن الــعــمــلاء الــذيــن وثــقــوا بــنــا لــتــحــقــيــق أهــدافــهــم
           </p>
         </div>
 
         <TestimonialsCarousel />
 
         <div className="mt-16">
-          <h3 className="text-xl font-bold text-center mb-8">عملاء نفتخر بالعمل معهم</h3>
+          <h3 className="text-xl font-bold text-center mb-8">عــمــلاء نــفــتــخــر بــالــعــمــل مــعــهــم</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div

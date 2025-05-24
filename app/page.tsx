@@ -11,49 +11,20 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-
-      {/* Hero Section */}
-      <HeroSection />
-
-      {/* Featured Projects Section */}
-      <FeaturedProjects />
-
-      {/* First CTA Banner */}
-      <CtaBanner
-        title="هذه صفحة معرض أعمال شركة الفشني"
-        description="تصفح مشاريعنا المميزة واكتشف كيف يمكننا مساعدة علامتك التجارية على النمو"
-        buttonText="زيارة موقعنا الرئيسي"
-        buttonLink="https://fashne.net/"
-        variant="blue"
-      />
-
-      {/* Services Section */}
-      <ServicesSection />
-
-      {/* Why Choose Us Section */}
-      <WhyChooseUs />
-
-      {/* Second CTA Banner */}
-      <CtaBanner
-        title="هل أنت جاهز لنقل علامتك التجارية إلى المستوى التالي؟"
-        description="دعنا نساعدك في تحقيق أهدافك التسويقية وبناء حضور رقمي قوي"
-        buttonText="تواصل معنا الآن"
-        buttonLink="/contact"
-        variant="red"
-      />
-
-      {/* Testimonials Section */}
-      <TestimonialsSection />
-
-      {/* Final CTA Banner */}
-      <CtaBanner
-        title="هذه صفحة معرض أعمال شركة الفشني للإعلان والعلاقات العامة"
-        description="تواصل معنا اليوم لمناقشة مشروعك القادم ودعنا نساعدك في تحقيق رؤيتك"
-        buttonText="زيارة موقعنا الرئيسي"
-        buttonLink="https://fashne.net/"
-        variant="dark"
-      />
-
+      <main className="flex-1">
+        <HeroSection />
+        <FeaturedProjects />
+        <ServicesSection />
+        <WhyChooseUs />
+        <TestimonialsSection />
+        <CtaBanner 
+          title="هــل أنــت جــاهــز لــبــدء مــشــروعــك الــقــادم؟" 
+          description="تــواصــل مــعــنــا الــيــوم لــمــنــاقــشــة كــيــف يــمــكــنــنــا مــســاعــدتــك فــي تــحــقــيــق أهــدافــك الــتــســويــقــيــة"
+          buttonText="احــصــل عــلــى اســتــشــارة مــجــانــيــة"
+          buttonLink="/contact"
+          variant="blue"
+        />
+      </main>
       <Footer />
     </div>
   )

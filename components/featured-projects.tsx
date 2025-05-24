@@ -48,15 +48,15 @@ export function FeaturedProjects() {
       <div className="container px-4 mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-[#186af2]">أحدث مشاريعنا</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-[#186af2]">أحــدث مــشــاريــعــنــا</h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl">
-              نفخر بتقديم مجموعة متنوعة من المشاريع التي نفذناها لعملائنا في مختلف المجالات
+              نــفــخــر بــتــقــديــم مــجــمــوعــة مــتــنــوعــة مــن المــشــاريــع الــتــي نــفــذنــاهــا لــعــمــلائــنــا فــي مــخــتــلــف المــجــالات
             </p>
           </div>
 
           <Button asChild className="mt-6 md:mt-0 bg-[#186af2] text-white border-0 shadow-md hover:shadow-lg transition-all">
             <Link href="/portfolio">
-              عرض جميع المشاريع
+              عــرض جــمــيــع المــشــاريــع
               <ChevronLeft className="mr-2 h-4 w-4" />
             </Link>
           </Button>
@@ -120,7 +120,7 @@ export function FeaturedProjects() {
             <div className="pt-4">
               <Button asChild variant="outline" className="w-full border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
                 <Link href="/portfolio">
-                  عرض المزيد من المشاريع
+                  عــرض المــزيــد مــن المــشــاريــع
                   <ChevronLeft className="mr-2 h-4 w-4" />
                 </Link>
               </Button>

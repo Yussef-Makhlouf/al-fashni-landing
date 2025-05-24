@@ -73,7 +73,7 @@ export function CtaBanner({ title, description, buttonText, buttonLink, variant 
             )}
           >
             <Link href={buttonLink} className="flex items-center gap-2">
-              <span>{buttonText}</span>
+              <span>{buttonText.split('').join('\u200B')}</span>
               {buttonLink.startsWith("http") && <ExternalLink className="h-4 w-4" />}
             </Link>
           </Button>
