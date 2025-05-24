@@ -44,8 +44,8 @@ const videoServices: Service[] = [
     title: "إنتاج الفيديوهات الإعلانية",
     description: "إنتاج فيديوهات إعلانية احترافية تعزز صورة علامتك التجارية",
     icon: Video,
-    color: "text-[#fabc05]",
-    bgColor: "bg-[#fabc05]/10",
+    color: "text-[#eb4438]",
+    bgColor: "bg-[#eb4438]/10",
     features: [
       "كتابة السيناريو والنص",
       "التصوير الاحترافي",
@@ -59,8 +59,8 @@ const videoServices: Service[] = [
     title: "إنتاج الريلز والمحتوى القصير",
     description: "إنتاج محتوى فيديو قصير وجذاب لمنصات التواصل الاجتماعي",
     icon: Film,
-    color: "text-[#ea4235]",
-    bgColor: "bg-[#ea4235]/10",
+    color: "text-[#eb4236]",
+    bgColor: "bg-[#eb4236]/10",
     features: [
       "أفكار إبداعية للمحتوى",
       "تصوير احترافي",
@@ -104,8 +104,8 @@ const videoServices: Service[] = [
     title: "المؤثرات الصوتية",
     description: "إضافة مؤثرات صوتية وموسيقى تعزز تأثير الفيديو وتحسن تجربة المشاهدة",
     icon: Music,
-    color: "text-[#fabc05]",
-    bgColor: "bg-[#fabc05]/10",
+    color: "text-[#eb4438]",
+    bgColor: "bg-[#eb4438]/10",
     features: [
       "اختيار الموسيقى المناسبة",
       "إضافة المؤثرات الصوتية",
@@ -119,8 +119,8 @@ const videoServices: Service[] = [
     title: "التعليق الصوتي",
     description: "خدمات تسجيل صوتي احترافي بأصوات عربية وأجنبية مميزة",
     icon: Mic,
-    color: "text-[#ea4235]",
-    bgColor: "bg-[#ea4235]/10",
+    color: "text-[#eb4236]",
+    bgColor: "bg-[#eb4236]/10",
     features: [
       "اختيار الصوت المناسب",
       "تسجيل في استديو احترافي",
@@ -250,13 +250,13 @@ function ProjectCard({ project }: { project: ProjectProps }) {
           {project.tags.map((tag, index) => (
             <span 
               key={index}
-              className="text-xs py-1 px-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full"
+              className="text-xs py-1 px-2 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full"
             >
               {tag}
             </span>
           ))}
         </div>
-        <Button variant="ghost" size="sm" className="text-yellow-600 hover:text-yellow-700 p-0 h-auto">
+        <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700 p-0 h-auto">
           مشاهدة الفيديو
           <ArrowRight className="ml-1 h-4 w-4" />
         </Button>
@@ -273,27 +273,27 @@ export default function VideoProductionPage() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         {/* Glowing elements */}
-        <div className="absolute top-20 left-10 w-80 h-80 rounded-full bg-[#fabc05]/20 blur-3xl opacity-30"></div>
-        <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-[#ea4235]/20 blur-3xl opacity-30"></div>
+        <div className="absolute top-20 left-10 w-80 h-80 rounded-full bg-[#eb4438]/20 blur-3xl opacity-30"></div>
+        <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-[#eb4236]/20 blur-3xl opacity-30"></div>
         
         <div className="container px-4 mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block bg-[#fabc05] text-white rounded-full px-6 py-2 mb-6 shadow-md hover:shadow-lg transition-all">
+            <div className="inline-block bg-[#eb4438] text-white rounded-full px-6 py-2 mb-6 shadow-md hover:shadow-lg transition-all">
               <span className="font-medium">خــدمــات الفــيــديــو</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
-              إنــتــاج <span className="text-[#fabc05] pulse-glow">فــيــديــو</span> 
+              إنــتــاج <span className="text-[#eb4438] pulse-glow">فــيــديــو</span> 
               <br className="hidden md:block" />احــتــرافــي ومــؤثــر
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               نــقــدم خــدمــات إنــتــاج فــيــديــو وريــلــز احــتــرافــيــة تــجــمــع بــيــن الإبــداع والــجــودة الــعــالــيــة لــتــحــقــيــق أهــدافــك التــســويــقــيــة
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-[#fabc05] hover:bg-[#fabc05]/90">
+              <Button size="lg" className="bg-[#eb4438] hover:bg-[#eb4438]/90">
                 طلب عرض سعر
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-[#fabc05] text-[#fabc05] hover:bg-[#fabc05]/10">
+              <Button size="lg" variant="outline" className="border-[#eb4438] text-[#eb4438] hover:bg-[#eb4438]/10">
                 مشاهدة أعمالنا
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
@@ -306,7 +306,7 @@ export default function VideoProductionPage() {
       <section className="py-16">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">خــدمــات <span className="text-[#fabc05]">الفــيــديــو</span> المــتــمــيــزة</h2>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">خــدمــات <span className="text-[#eb4438]">الفــيــديــو</span> المــتــمــيــزة</h2>
             <p className="text-muted-foreground">
               نــقــدم بــاقــة مــتــنــوعــة مــن خــدمــات إنــتــاج الفــيــديــو والمــونــتــاج الاحــتــرافــي
             </p>
@@ -327,7 +327,7 @@ export default function VideoProductionPage() {
       <section className="py-16">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">أعــمــالــنــا <span className="text-[#fabc05]">المــمــيــزة</span></h2>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">أعــمــالــنــا <span className="text-[#eb4438]">المــمــيــزة</span></h2>
             <p className="text-muted-foreground">
               نــمــاذج مــن أحــدث الفــيــديــوهــات الــتــي أنــتــجــنــاهــا لــعــمــلائــنــا
             </p>
@@ -340,7 +340,7 @@ export default function VideoProductionPage() {
           </div>
           
           <div className="text-center mt-10">
-            <Button asChild className="bg-[#fabc05] hover:bg-[#fabc05]/90">
+            <Button asChild className="bg-[#eb4438] hover:bg-[#eb4438]/90">
               <Link href="/portfolio">
                 مشاهدة جميع الأعمال
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -354,7 +354,7 @@ export default function VideoProductionPage() {
       <section className="py-16 bg-muted/30">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">مــراحــل <span className="text-[#fabc05]">الإنــتــاج</span></h2>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">مــراحــل <span className="text-[#eb4438]">الإنــتــاج</span></h2>
             <p className="text-muted-foreground">
               نــتــبــع مــنــهــجــيــة احــتــرافــيــة فــي تــنــفــيــذ مــشــاريــع إنــتــاج الفــيــديــو لــضــمــان أفــضــل النــتــائــج
             </p>
@@ -362,8 +362,8 @@ export default function VideoProductionPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
-              <div className="bg-[#fabc05]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#fabc05]/20">
-                <span className="text-xl font-bold text-[#fabc05]">1</span>
+              <div className="bg-[#eb4438]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#eb4438]/20">
+                <span className="text-xl font-bold text-[#eb4438]">1</span>
               </div>
               <h3 className="text-xl font-bold mb-3">مــا قــبــل الإنــتــاج</h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -372,8 +372,8 @@ export default function VideoProductionPage() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
-              <div className="bg-[#ea4235]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#ea4235]/20">
-                <span className="text-xl font-bold text-[#ea4235]">2</span>
+              <div className="bg-[#fabc05]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#fabc05]/20">
+                <span className="text-xl font-bold text-[#fabc05]">2</span>
               </div>
               <h3 className="text-xl font-bold mb-3">التــصــويــر والإنــتــاج</h3>
               <p className="text-gray-600 dark:text-gray-300">

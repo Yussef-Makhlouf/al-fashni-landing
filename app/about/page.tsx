@@ -191,7 +191,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-foreground">أحــمــد الــفــشــنــي</h3>
+                <h3 className="text-xl font-bold text-foreground">مــحـــمـود الــفــشــنــي</h3>
                 <p className="text-[#186af2] font-medium">المــديــر التــنــفــيــذي</p>
               </div>
             </div>
@@ -209,8 +209,8 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-foreground">ســارة العــتــيــبــي</h3>
-                <p className="text-[#ea4235] font-medium">مــديــرة التــســويــق</p>
+                <h3 className="text-xl font-bold text-foreground">مـحــمــد صــــلاح</h3>
+                <p className="text-[#ea4235] font-medium"> مــوشــن جــــرافـيـــك</p>
               </div>
             </div>
             
@@ -227,11 +227,27 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-foreground">مــحــمــد الــقــحــطــانــي</h3>
-                <p className="text-[#fabc05] font-medium">المــديــر الإبــداعــي</p>
+                <h3 className="text-xl font-bold text-foreground"> يـــوســــــف مـخـــــلوف</h3>
+                <p className="text-[#186af2] font-medium">مـطـــــور ويــب </p>
               </div>
             </div>
-            
+                        {/* Team Member 3 */}
+                        <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border group hover:border-[#186af2]/50 transition-all">
+              <div className="relative">
+                <Image
+                  src="/placeholder.svg?height=400&width=300"
+                  alt="عضو الفريق"
+                  width={300}
+                  height={400}
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold text-foreground"> مــــي أيـــــمـــن</h3>
+                <p className="text-[#fabc05] font-medium"> جــــرافــــيــــك ديزايــــن </p>
+              </div>
+            </div>
             {/* Team Member 4 */}
             <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border group hover:border-[#186af2]/50 transition-all">
               <div className="relative">
@@ -245,8 +261,8 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-foreground">نــورة الــدوســري</h3>
-                <p className="text-[#34a853] font-medium">مــديــرة الـــــبرمجــــــه</p>
+                <h3 className="text-xl font-bold text-foreground"> علـــــي الفـــــشـــــنـــــي</h3>
+                <p className="text-[#34a853] font-medium"> المــسـوق الإلــكــتــرونــي</p>
               </div>
             </div>
           </div>

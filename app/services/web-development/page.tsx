@@ -14,7 +14,8 @@ import {
   Smartphone,
   ArrowRight,
   CheckCircle,
-  ExternalLink
+  ExternalLink,
+  Layout
 } from "lucide-react"
 import Link from "next/link"
 import { CtaBanner } from "@/components/cta-banner"
@@ -116,17 +117,17 @@ const webDevServices: Service[] = [
   },
   {
     id: 6,
-    title: "تطبيقات الهاتف المحمول",
-    description: "تطوير تطبيقات للهواتف الذكية متوافقة مع أنظمة iOS و Android",
-    icon: Smartphone,
+    title: "تطوير واجهات المستخدم",
+    description: "تصميم وتطوير واجهات مستخدم جذابة وسهلة الاستخدام",
+    icon: Layout,
     color: "text-[#ea4235]",
     bgColor: "bg-[#ea4235]/10",
     features: [
-      "تطبيقات أصلية لـ iOS و Android",
-      "تطبيقات هجينة متعددة المنصات",
-      "تطبيقات ويب تفاعلية (PWA)",
-      "تكامل مع خدمات الهاتف",
-      "تحديثات وصيانة مستمرة"
+      "تصميم واجهات مستخدم متجاوبة",
+      "تحسين تجربة المستخدم (UX)",
+      "تصميم واجهات تفاعلية",
+      "تحسين أداء الواجهات",
+      "توافق مع مختلف المتصفحات"
     ]
   }
 ];

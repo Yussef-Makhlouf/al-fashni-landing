@@ -59,8 +59,8 @@ const designServices: Service[] = [
     title: "تصميم السوشيال ميديا",
     description: "تصميم منشورات جذابة ومتناسقة لمنصات التواصل الاجتماعي",
     icon: Image,
-    color: "text-[#ea4235]",
-    bgColor: "bg-[#ea4235]/10",
+    color: "text-[#fabc05]",
+    bgColor: "bg-[#fabc05]/10",
     features: [
       "تصميم منشورات متناسقة مع هويتك",
       "قوالب قابلة للتعديل والتخصيص",
@@ -89,8 +89,8 @@ const designServices: Service[] = [
     title: "التصوير الفوتوغرافي",
     description: "خدمات تصوير احترافية للمنتجات والفعاليات والأماكن",
     icon: Camera,
-    color: "text-[#34a853]",
-    bgColor: "bg-[#34a853]/10",
+    color: "text-[#fabc05]",
+    bgColor: "bg-[#fabc05]/10",
     features: [
       "تصوير المنتجات باحترافية",
       "تصوير الفعاليات والمناسبات",
@@ -119,8 +119,8 @@ const designServices: Service[] = [
     title: "تصميم إعلانات الموبايل",
     description: "تصميم إعلانات جذابة للتطبيقات والمواقع المتوافقة مع الجوال",
     icon: Smartphone,
-    color: "text-[#ea4235]",
-    bgColor: "bg-[#ea4235]/10",
+    color: "text-[#fabc05]",
+    bgColor: "bg-[#fabc05]/10",
     features: [
       "بانرات إعلانية متحركة وثابتة",
       "إعلانات متوافقة مع مختلف الأحجام",
@@ -161,9 +161,7 @@ function DesignTools() {
     { name: "Adobe XD", icon: "/tools/xd.svg" },
     { name: "Figma", icon: "/tools/figma.svg" },
     { name: "Adobe InDesign", icon: "/tools/indesign.svg" },
-    { name: "Adobe After Effects", icon: "/tools/after-effects.svg" },
-    { name: "Sketch", icon: "/tools/sketch.svg" },
-    { name: "Canva", icon: "/tools/canva.svg" }
+    { name: "Adobe After Effects", icon: "/tools/after-effects.svg" }
   ];
 
   return (
@@ -247,13 +245,13 @@ function ProjectCard({ project }: { project: ProjectProps }) {
           {project.tags.map((tag, index) => (
             <span 
               key={index}
-              className="text-xs py-1 px-2 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded-full"
+              className="text-xs py-1 px-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full"
             >
               {tag}
             </span>
           ))}
         </div>
-        <Button variant="ghost" size="sm" className="text-pink-600 hover:text-pink-700 p-0 h-auto">
+        <Button variant="ghost" size="sm" className="text-yellow-600 hover:text-yellow-700 p-0 h-auto">
           عرض التفاصيل
           <ArrowRight className="ml-1 h-4 w-4" />
         </Button>
@@ -270,27 +268,27 @@ export default function GraphicDesignPage() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         {/* Glowing elements */}
-        <div className="absolute top-20 left-10 w-80 h-80 rounded-full bg-[#ea4235]/20 blur-3xl opacity-30"></div>
+        <div className="absolute top-20 left-10 w-80 h-80 rounded-full bg-[#fabc05]/20 blur-3xl opacity-30"></div>
         <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full bg-[#fabc05]/20 blur-3xl opacity-30"></div>
         
         <div className="container px-4 mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block bg-[#ea4235] text-white rounded-full px-6 py-2 mb-6 shadow-md hover:shadow-lg transition-all">
+            <div className="inline-block bg-[#fabc05] text-white rounded-full px-6 py-2 mb-6 shadow-md hover:shadow-lg transition-all">
               <span className="font-medium">خــدمــات التــصــمــيــم</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
-              تــصــمــيــم <span className="text-[#ea4235] pulse-glow">جــرافــيــك</span> 
+              تــصــمــيــم <span className="text-[#fabc05] pulse-glow">جــرافــيــك</span> 
               <br className="hidden md:block" />إبــداعــي ومــؤثــر
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               نــقــدم خــدمــات تــصــمــيــم جــرافــيــك احــتــرافــيــة تــجــمــع بــيــن الإبــداع والاحــتــرافــيــة لــتــعــزيــز هــويــة عــلامــتــك التــجــاريــة
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-[#ea4235] hover:bg-[#ea4235]/90">
+              <Button size="lg" className="bg-[#fabc05] hover:bg-[#fabc05]/90">
                 طلب عرض سعر
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-[#ea4235] text-[#ea4235] hover:bg-[#ea4235]/10">
+              <Button size="lg" variant="outline" className="border-[#fabc05] text-[#fabc05] hover:bg-[#fabc05]/10">
                 تصفح أعمالنا
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Button>
@@ -303,7 +301,7 @@ export default function GraphicDesignPage() {
       <section className="py-16">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">خــدمــات <span className="text-[#ea4235]">التــصــمــيــم</span> المــتــمــيــزة</h2>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">خــدمــات <span className="text-[#fabc05]">التــصــمــيــم</span> المــتــمــيــزة</h2>
             <p className="text-muted-foreground">
               نــقــدم بــاقــة مــتــنــوعــة مــن خــدمــات التــصــمــيــم الاحــتــرافــيــة الــتــي تــلــبــي احــتــيــاجــات عــمــلائــنــا
             </p>
@@ -324,7 +322,7 @@ export default function GraphicDesignPage() {
       <section className="py-16">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">أعــمــالــنــا <span className="text-[#ea4235]">المــمــيــزة</span></h2>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">أعــمــالــنــا <span className="text-[#fabc05]">المــمــيــزة</span></h2>
             <p className="text-muted-foreground">
               نــمــاذج مــن أحــدث تــصــامــيــمــنــا الــتــي نــفــذنــاهــا لــعــمــلائــنــا فــي مــخــتــلــف المــجــالات
             </p>
@@ -337,7 +335,7 @@ export default function GraphicDesignPage() {
           </div>
           
           <div className="text-center mt-10">
-            <Button asChild className="bg-[#ea4235] hover:bg-[#ea4235]/90">
+            <Button asChild className="bg-[#fabc05] hover:bg-[#fabc05]/90">
               <Link href="/portfolio">
                 عرض جميع الأعمال
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -351,7 +349,7 @@ export default function GraphicDesignPage() {
       <section className="py-16 bg-muted/30">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">مــراحــل <span className="text-[#ea4235]">التــصــمــيــم</span></h2>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">مــراحــل <span className="text-[#fabc05]">التــصــمــيــم</span></h2>
             <p className="text-muted-foreground">
               نــتــبــع مــنــهــجــيــة احــتــرافــيــة فــي تــنــفــيــذ مــشــاريــع التــصــمــيــم لــضــمــان أفــضــل النــتــائــج
             </p>
@@ -359,8 +357,8 @@ export default function GraphicDesignPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
-              <div className="bg-[#ea4235]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#ea4235]/20">
-                <span className="text-xl font-bold text-[#ea4235]">1</span>
+              <div className="bg-[#fabc05]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#fabc05]/20">
+                <span className="text-xl font-bold text-[#fabc05]">1</span>
               </div>
               <h3 className="text-xl font-bold mb-3">الــبــحــث والاســتــكــشــاف</h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -369,8 +367,8 @@ export default function GraphicDesignPage() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
-              <div className="bg-[#fabc05]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#fabc05]/20">
-                <span className="text-xl font-bold text-[#fabc05]">2</span>
+              <div className="bg-[#eb4236]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#fabc05]/20">
+                <span className="text-xl font-bold text-[#eb4236]">2</span>
               </div>
               <h3 className="text-xl font-bold mb-3">الأفــكــار والمــفــاهــيــم</h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -379,8 +377,8 @@ export default function GraphicDesignPage() {
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700">
-              <div className="bg-[#186af2]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#186af2]/20">
-                <span className="text-xl font-bold text-[#186af2]">3</span>
+              <div className="bg-[#186cf2]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 border border-[#186cf2]/20">
+                <span className="text-xl font-bold text-[#186cf2]">3</span>
               </div>
               <h3 className="text-xl font-bold mb-3">التــنــفــيــذ والتــطــويــر</h3>
               <p className="text-gray-600 dark:text-gray-300">
