@@ -41,7 +41,10 @@ const handicrafts = localFont({
 export const metadata: Metadata = {
   title: "الفشني للتسويق الرقمي",
   description: "شركة الفشني للتسويق الرقمي - معرض أعمالنا ومشاريعنا",
-  generator: 'v0.dev'
+  icons: {
+    icon: "/logo.png",
+    
+  },
 }
 
 function GlowDots() {
