@@ -27,12 +27,15 @@ import {
   Database,
   Cpu,
   Lightbulb,
-  Target
+  Target,
+  ShoppingCart,
+  Mic
 } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
 import { ServicesList } from "@/components/services-list"
 import { CtaBanner } from "@/components/cta-banner"
+import { cn } from "@/lib/utils"
 
 // Interface definitions
 interface Service {
@@ -159,6 +162,8 @@ function StatCard({ number, text }: { number: string; text: string }) {
 }
 
 export default function ServicesPage() {
+  const [activeService, setActiveService] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -195,7 +200,335 @@ export default function ServicesPage() {
             </p>
           </div>
           
-          <ServicesList />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link href="/services/web-development" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(1)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 1 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-950/30 dark:to-blue-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#186af2]/10")}>
+                    <Globe className={cn("h-6 w-6", "text-[#186af2]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">تــطــويــر المــواقــع الإلــكــتــرونــيــة</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">تــصــمــيــم وتــطــويــر مــواقــع إلــكــتــرونــيــة عــصــريــة وســريــعــة ومــتــجــاوبــة مــع جــمــيــع الأجــهــزة</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#186af2] to-[#186af2]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 1 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+
+            <Link href="/services/digital-marketing" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(2)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 2 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-red-100 to-red-50 dark:from-red-950/30 dark:to-red-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#ea4235]/10")}>
+                    <Megaphone className={cn("h-6 w-6", "text-[#ea4235]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">التــســويــق الــرقــمــي</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">اســتــراتــيــجــيــات تــســويــقــيــة مــتــكــامــلــة لــزيــادة الــوعــي بــعــلامــتــك التــجــاريــة وجــذب العــمــلاء المــحــتــمــلــيــن</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#ea4235] to-[#ea4235]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 2 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+
+            <Link href="/services/digital-marketing" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(3)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 3 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-yellow-100 to-yellow-50 dark:from-yellow-950/30 dark:to-yellow-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#fabc05]/10")}>
+                    <BarChart className={cn("h-6 w-6", "text-[#fabc05]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">إدارة وســائــل التــواصــل الاجــتــمــاعــي</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">إدارة احــتــرافــيــة لــحــســابــات التــواصــل الاجــتــمــاعــي وإنــشــاء مــحــتــوى جــذاب يــنــاســب جــمــهــورك المــســتــهــدف</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#fabc05] to-[#fabc05]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 3 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+
+            <Link href="/services/digital-marketing" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(4)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 4 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-green-100 to-green-50 dark:from-green-950/30 dark:to-green-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#34a853]/10")}>
+                    <Search className={cn("h-6 w-6", "text-[#34a853]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">تــحــســيــن مــحــركــات البــحــث (SEO)</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">تــحــســيــن ظــهــور مــوقــعــك فــي نــتــائــج البــحــث وزيــادة الــزيــارات العــضــويــة مــن الجــمــهــور المــســتــهــدف</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#34a853] to-[#34a853]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 4 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+
+            <Link href="/services/graphic-design" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(5)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 5 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-950/30 dark:to-blue-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#186af2]/10")}>
+                    <PenTool className={cn("h-6 w-6", "text-[#186af2]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">الــهــويــة البــصــريــة</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">تــصــمــيــم هــويــات بــصــريــة مــمــيــزة تــعــكــس قــيــم عــلامــتــك التــجــاريــة وتــســاعــدهــا عــلــى التــمــيــز فــي الســوق</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#186af2] to-[#186af2]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 5 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+
+            <Link href="/services/web-development" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(6)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 6 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-red-100 to-red-50 dark:from-red-950/30 dark:to-red-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#ea4235]/10")}>
+                    <ShoppingCart className={cn("h-6 w-6", "text-[#ea4235]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">تــصــمــيــم وتــنــفــيــذ المــتــاجــر الإلــكــتــرونــيــة</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">تــطــويــر مــتــاجــر إلــكــتــرونــيــة مــتــكــامــلــة مــع نــظــام إدارة المــخــزون ونــظــام الــدفــع الآمــن وتــجــربــة شــراء ســلــســة</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#ea4235] to-[#ea4235]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 6 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+
+            <Link href="/services/video-production" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(7)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 7 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-yellow-100 to-yellow-50 dark:from-yellow-950/30 dark:to-yellow-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#fabc05]/10")}>
+                    <Video className={cn("h-6 w-6", "text-[#fabc05]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">إنــتــاج الــفــيــديــو والــريــلــز</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">إنــتــاج فــيــديــوهــات وريــلــز احــتــرافــيــة لــمــنــصــات التــواصــل الاجــتــمــاعــي تــجــذب الــمــشــاهــدات وتــعــزز حــضــورك الــرقــمــي</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#fabc05] to-[#fabc05]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 7 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+
+            <Link href="/services/video-production" className="block">
+              <motion.div
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-6 transition-all duration-300",
+                  "hover:shadow-lg cursor-pointer group",
+                )}
+                onMouseEnter={() => setActiveService(8)}
+                onMouseLeave={() => setActiveService(null)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 opacity-0 transition-opacity duration-300",
+                    activeService === 8 ? "opacity-100" : "group-hover:opacity-100",
+                    "bg-gradient-to-br from-green-100 to-green-50 dark:from-green-950/30 dark:to-green-900/20"
+                  )}
+                />
+
+                <div className="relative z-10">
+                  <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", "bg-[#34a853]/10")}>
+                    <Mic className={cn("h-6 w-6", "text-[#34a853]")} />
+                  </div>
+
+                  <h3 className="text-lg font-bold mb-2">تــســجــيــل الــصــوت الــاحــتــرافــي</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">تــســجــيــل صــوت احــتــرافــي لــفــيــديــوهــاتــك مــع أصــوات عــربــيــة وأجــنــبــيــة لــتــعــزيــز تــأثــيــر مــحــتــواك</p>
+                </div>
+
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#34a853] to-[#34a853]"
+                  initial={{ width: "0%" }}
+                  animate={{
+                    width: activeService === 8 ? "100%" : "0%",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            </Link>
+          </div>
         </div>
       </section>
       

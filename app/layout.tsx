@@ -3,6 +3,9 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Preloader } from "@/components/preloader"
+import { Navbar } from "@/components/navbar"
+import { PageTransition } from "@/components/page-transition"
 
 const handicrafts = localFont({
   src: [
@@ -36,8 +39,8 @@ const handicrafts = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "الفشني للإعلان والعلاقات العامة",
-  description: "شركة الفشني للإعلان والعلاقات العامة - معرض أعمالنا ومشاريعنا",
+  title: "الفشني للتسويق الرقمي",
+  description: "شركة الفشني للتسويق الرقمي - معرض أعمالنا ومشاريعنا",
   generator: 'v0.dev'
 }
 
@@ -61,8 +64,12 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className={`${handicrafts.variable} font-handicrafts`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <Preloader />
+          <Navbar />
           <GlowDots />
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </ThemeProvider>
       </body>
     </html>
