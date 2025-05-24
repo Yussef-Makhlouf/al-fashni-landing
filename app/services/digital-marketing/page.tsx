@@ -153,6 +153,113 @@ const featuredProjects: ProjectProps[] = [
   }
 ];
 
+// Extended Portfolio Projects - Add more projects for pagination
+const allPortfolioProjects: ProjectProps[] = [
+  ...featuredProjects,
+  {
+    title: "حملة إعلانية لمنتج جديد",
+    description: "تصميم وإدارة حملة إعلانية لإطلاق منتج جديد حققت وصولاً لأكثر من مليون مستخدم",
+    image: "/portfolio/marketing-project-4.jpg",
+    tags: ["إعلانات مدفوعة", "فيسبوك", "انستغرام"]
+  },
+  {
+    title: "استراتيجية محتوى لمدونة",
+    description: "تطوير استراتيجية محتوى متكاملة لمدونة شركة تقنية مع زيادة الزيارات بنسبة 250%",
+    image: "/portfolio/marketing-project-5.jpg",
+    tags: ["محتوى", "SEO", "تحويل"]
+  },
+  {
+    title: "حملة بريد إلكتروني",
+    description: "تصميم وتنفيذ حملة بريد إلكتروني تسويقية حققت نسبة فتح 35% ونسبة نقر 12%",
+    image: "/portfolio/marketing-project-6.jpg",
+    tags: ["بريد إلكتروني", "تسويق", "تحويل"]
+  },
+  {
+    title: "إدارة حملات جوجل الإعلانية",
+    description: "إدارة حملات إعلانية على محرك بحث جوجل مع تحسين معدل التحويل بنسبة 80%",
+    image: "/portfolio/marketing-project-7.jpg",
+    tags: ["جوجل أدز", "SEM", "تحويل"]
+  },
+  {
+    title: "استراتيجية تسويق المحتوى",
+    description: "تطوير استراتيجية تسويق محتوى متكاملة لشركة عقارية مع زيادة العملاء المحتملين بنسبة 120%",
+    image: "/portfolio/marketing-project-8.jpg",
+    tags: ["محتوى", "استراتيجية", "عملاء محتملين"]
+  },
+  {
+    title: "حملة علاقات عامة رقمية",
+    description: "تنفيذ حملة علاقات عامة رقمية لشركة ناشئة مع تغطية إعلامية في أكثر من 15 منصة",
+    image: "/portfolio/marketing-project-9.jpg",
+    tags: ["علاقات عامة", "تغطية إعلامية", "سمعة"]
+  },
+  {
+    title: "تسويق عبر المؤثرين",
+    description: "تنفيذ حملة تسويق عبر المؤثرين لعلامة تجارية في مجال الأزياء مع وصول لأكثر من 2 مليون متابع",
+    image: "/portfolio/marketing-project-10.jpg",
+    tags: ["مؤثرين", "انستغرام", "تيك توك"]
+  },
+  {
+    title: "تحسين معدل التحويل",
+    description: "تحسين معدل التحويل لموقع تجارة إلكترونية مع زيادة المبيعات بنسبة 65%",
+    image: "/portfolio/marketing-project-11.jpg",
+    tags: ["CRO", "تحليلات", "مبيعات"]
+  },
+  {
+    title: "استراتيجية السوشيال ميديا",
+    description: "تطوير استراتيجية سوشيال ميديا متكاملة لعلامة تجارية في مجال الأغذية",
+    image: "/portfolio/marketing-project-12.jpg",
+    tags: ["سوشيال ميديا", "استراتيجية", "محتوى"]
+  },
+  {
+    title: "حملة يوتيوب إعلانية",
+    description: "إدارة حملة إعلانية على منصة يوتيوب مع معدل مشاهدة كاملة بنسبة 45%",
+    image: "/portfolio/marketing-project-13.jpg",
+    tags: ["يوتيوب", "فيديو", "إعلانات"]
+  },
+  {
+    title: "تسويق عبر البودكاست",
+    description: "تنفيذ استراتيجية تسويق عبر البودكاست لشركة خدمات مالية مع وصول لشريحة جديدة من العملاء",
+    image: "/portfolio/marketing-project-14.jpg",
+    tags: ["بودكاست", "محتوى صوتي", "رعاية"]
+  },
+  {
+    title: "إعادة تصميم موقع لتحسين التحويل",
+    description: "إعادة تصميم صفحات هبوط لموقع خدمي مع زيادة معدل التحويل بنسبة 85%",
+    image: "/portfolio/marketing-project-15.jpg",
+    tags: ["تصميم", "UX", "تحويل"]
+  },
+  {
+    title: "تسويق المحتوى البصري",
+    description: "استراتيجية تسويق محتوى بصري على منصة انستغرام مع زيادة التفاعل بنسبة 200%",
+    image: "/portfolio/marketing-project-16.jpg",
+    tags: ["محتوى بصري", "انستغرام", "تفاعل"]
+  },
+  {
+    title: "حملة إطلاق تطبيق",
+    description: "حملة تسويقية متكاملة لإطلاق تطبيق جديد مع أكثر من 50 ألف تحميل في الشهر الأول",
+    image: "/portfolio/marketing-project-17.jpg",
+    tags: ["تطبيقات", "إطلاق", "ASO"]
+  },
+  {
+    title: "تسويق محتوى فيديو",
+    description: "استراتيجية تسويق محتوى فيديو قصير على منصات التواصل الاجتماعي",
+    image: "/portfolio/marketing-project-18.jpg",
+    tags: ["فيديو", "محتوى قصير", "ريلز"]
+  },
+  {
+    title: "تسويق عبر الواقع المعزز",
+    description: "تنفيذ حملة تسويقية باستخدام تقنيات الواقع المعزز لعلامة تجارية في مجال الأثاث",
+    image: "/portfolio/marketing-project-19.jpg",
+    tags: ["واقع معزز", "تقنية", "تفاعل"]
+  },
+  {
+    title: "استراتيجية التسويق الشامل",
+    description: "تطوير استراتيجية تسويق شاملة لشركة ناشئة مع تحقيق نمو بنسبة 300% خلال عام",
+    image: "/portfolio/marketing-project-20.jpg",
+    tags: ["استراتيجية", "نمو", "تسويق متكامل"]
+  }
+];
+
 // Marketing Platforms Component
 function MarketingPlatforms() {
   const platforms = [
@@ -262,6 +369,93 @@ function ProjectCard({ project }: { project: ProjectProps }) {
   );
 }
 
+// Portfolio Gallery with Pagination Component
+function PortfolioGallery() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+  
+  // Calculate total pages
+  const totalPages = Math.ceil(allPortfolioProjects.length / projectsPerPage);
+  
+  // Get current projects
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = allPortfolioProjects.slice(indexOfFirstProject, indexOfLastProject);
+  
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  
+  // Generate page numbers array
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+  
+  return (
+    <section className="py-16">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">معــرض <span className="text-[#34a853]">أعــمــالــنــا</span></h2>
+          <p className="text-muted-foreground">
+            نــمــاذج مــن أحــدث الــحــمــلات التــســويــقــيــة الــتــي نــفــذنــاهــا لــعــمــلائــنــا
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentProjects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+        
+        {/* Pagination */}
+        <div className="mt-12 flex justify-center">
+          <nav className="flex items-center gap-1">
+            <button 
+              onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === 1 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#34a853] hover:bg-[#34a853]/10'
+              }`}
+              aria-label="Previous page"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            
+            {pageNumbers.map(number => (
+              <button
+                key={number}
+                onClick={() => paginate(number)}
+                className={`w-10 h-10 rounded-md flex items-center justify-center ${
+                  currentPage === number
+                    ? 'bg-[#34a853] text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-[#34a853]/10'
+                }`}
+              >
+                {number}
+              </button>
+            ))}
+            
+            <button 
+              onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === totalPages 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#34a853] hover:bg-[#34a853]/10'
+              }`}
+              aria-label="Next page"
+            >
+              <ArrowRight className="h-5 w-5 transform rotate-180" />
+            </button>
+          </nav>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Stats Component
 function MarketingStats() {
   const stats = [
@@ -362,32 +556,8 @@ export default function DigitalMarketingPage() {
       {/* Stats Section */}
       <MarketingStats />
       
-      {/* Featured Projects Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">نــتــائــجــنــا <span className="text-[#34a853]">المــمــيــزة</span></h2>
-            <p className="text-muted-foreground">
-              نــمــاذج مــن أحــدث الــحــمــلات التــســويــقــيــة الــتــي نــفــذنــاهــا لــعــمــلائــنــا
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Button asChild className="bg-[#34a853] hover:bg-[#34a853]/90">
-              <Link href="/portfolio">
-                عرض جميع المشاريع
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Portfolio Gallery Section with Pagination */}
+      <PortfolioGallery />
       
       {/* Marketing Process */}
       <section className="py-16 bg-muted/30">

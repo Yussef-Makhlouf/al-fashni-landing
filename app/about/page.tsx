@@ -173,7 +173,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">فــريــق <span className="text-[#186af2]">العــمــل</span></h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              يــضــم فــريــقــنــا نــخــبــة مــن المــحــتــرفــيــن ذوي الخــبــرة والمــوهــبــة فــي مــخــتــلــف مــجــالات الإعــلان والتــســويــق
+              يــضــم فــريــقــنــا نــخــبــة مــن المــحــتــرفــيــن ذوي الخــبــرة والمــوهــبــة فــي مــخــتــلــف الـمــجــالات التـقنــيه والتــســويــق
             </p>
           </div>
           

@@ -153,6 +153,113 @@ const featuredProjects: ProjectProps[] = [
   }
 ];
 
+// Extended Portfolio Projects - Add more projects for pagination
+const allPortfolioProjects: ProjectProps[] = [
+  ...featuredProjects,
+  {
+    title: "فيديو دعائي لمنتج تجميلي",
+    description: "إنتاج فيديو دعائي احترافي لإطلاق منتج تجميلي جديد في الأسواق",
+    image: "/portfolio/video-project-4.jpg",
+    tags: ["إعلان", "تصوير", "إضاءة"]
+  },
+  {
+    title: "فيديو تعريفي لشركة",
+    description: "إنتاج فيديو تعريفي شامل عن شركة تقنية يوضح خدماتها وميزاتها",
+    image: "/portfolio/video-project-5.jpg",
+    tags: ["تعريفي", "شركات", "مقابلات"]
+  },
+  {
+    title: "فيديو تسويقي للعقارات",
+    description: "تصوير وإنتاج فيديو تسويقي لمشروع عقاري فاخر مع لقطات جوية",
+    image: "/portfolio/video-project-6.jpg",
+    tags: ["عقارات", "درون", "تصوير جوي"]
+  },
+  {
+    title: "موشن جرافيك للخدمات المالية",
+    description: "تصميم فيديو موشن جرافيك لشرح الخدمات المالية لبنك استثماري",
+    image: "/portfolio/video-project-7.jpg",
+    tags: ["موشن جرافيك", "خدمات مالية", "شرح"]
+  },
+  {
+    title: "فيديو تدريبي داخلي",
+    description: "إنتاج سلسلة فيديوهات تدريبية للموظفين الجدد في شركة كبرى",
+    image: "/portfolio/video-project-8.jpg",
+    tags: ["تدريب", "تعليمي", "شركات"]
+  },
+  {
+    title: "مقابلات تنفيذية",
+    description: "تصوير وإنتاج سلسلة مقابلات مع المدراء التنفيذيين في شركة رائدة",
+    image: "/portfolio/video-project-9.jpg",
+    tags: ["مقابلات", "شركات", "محتوى"]
+  },
+  {
+    title: "فيديوهات منتجات",
+    description: "تصوير وإنتاج فيديوهات عرض منتجات لمتجر إلكتروني",
+    image: "/portfolio/video-project-10.jpg",
+    tags: ["منتجات", "تصوير", "إضاءة"]
+  },
+  {
+    title: "إعلان تلفزيوني",
+    description: "إنتاج إعلان تلفزيوني لحملة توعوية وطنية",
+    image: "/portfolio/video-project-11.jpg",
+    tags: ["إعلان", "تلفزيون", "حملة"]
+  },
+  {
+    title: "فيديو تجربة مستخدم",
+    description: "تصوير وإنتاج فيديو يوضح تجربة المستخدم لتطبيق جديد",
+    image: "/portfolio/video-project-12.jpg",
+    tags: ["تجربة مستخدم", "تطبيقات", "شرح"]
+  },
+  {
+    title: "فيديوهات تسويقية للمطاعم",
+    description: "تصوير وإنتاج فيديوهات تسويقية لسلسلة مطاعم مع لقطات طعام احترافية",
+    image: "/portfolio/video-project-13.jpg",
+    tags: ["مطاعم", "طعام", "تسويق"]
+  },
+  {
+    title: "فيديو تقديمي لمؤتمر",
+    description: "إنتاج فيديو تقديمي لمؤتمر تقني كبير مع مؤثرات بصرية متقدمة",
+    image: "/portfolio/video-project-14.jpg",
+    tags: ["مؤتمرات", "فعاليات", "مؤثرات"]
+  },
+  {
+    title: "فيديو تسويقي للسياحة",
+    description: "تصوير وإنتاج فيديو ترويجي لوجهة سياحية مع لقطات جوية خلابة",
+    image: "/portfolio/video-project-15.jpg",
+    tags: ["سياحة", "درون", "تصوير خارجي"]
+  },
+  {
+    title: "فيديوهات تعليمية",
+    description: "إنتاج سلسلة فيديوهات تعليمية لمنصة تعليم إلكتروني",
+    image: "/portfolio/video-project-16.jpg",
+    tags: ["تعليمي", "دورات", "شرح"]
+  },
+  {
+    title: "فيديو إطلاق منتج تقني",
+    description: "إنتاج فيديو احترافي لإطلاق منتج تقني جديد بمؤثرات بصرية متقدمة",
+    image: "/portfolio/video-project-17.jpg",
+    tags: ["تقنية", "إطلاق", "مؤثرات"]
+  },
+  {
+    title: "فيديو تحفيزي داخلي",
+    description: "إنتاج فيديو تحفيزي للموظفين لشركة كبرى",
+    image: "/portfolio/video-project-18.jpg",
+    tags: ["تحفيزي", "شركات", "موظفين"]
+  },
+  {
+    title: "فيديوهات محتوى لليوتيوب",
+    description: "إنتاج سلسلة فيديوهات محتوى لقناة يوتيوب متخصصة",
+    image: "/portfolio/video-project-19.jpg",
+    tags: ["يوتيوب", "محتوى", "سلسلة"]
+  },
+  {
+    title: "فيديو تفاعلي",
+    description: "إنتاج فيديو تفاعلي باستخدام أحدث تقنيات التصوير والمونتاج",
+    image: "/portfolio/video-project-20.jpg",
+    tags: ["تفاعلي", "تقنية", "مبتكر"]
+  }
+];
+
 // Video Equipment Component
 function VideoEquipment() {
   const equipments = [
@@ -265,6 +372,93 @@ function ProjectCard({ project }: { project: ProjectProps }) {
   );
 }
 
+// Portfolio Gallery with Pagination Component
+function PortfolioGallery() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+  
+  // Calculate total pages
+  const totalPages = Math.ceil(allPortfolioProjects.length / projectsPerPage);
+  
+  // Get current projects
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = allPortfolioProjects.slice(indexOfFirstProject, indexOfLastProject);
+  
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  
+  // Generate page numbers array
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+  
+  return (
+    <section className="py-16">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">معــرض <span className="text-[#eb4438]">أعــمــالــنــا</span></h2>
+          <p className="text-muted-foreground">
+            نــمــاذج مــن أحــدث الفــيــديــوهــات الــتــي أنــتــجــنــاهــا لــعــمــلائــنــا
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentProjects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+        
+        {/* Pagination */}
+        <div className="mt-12 flex justify-center">
+          <nav className="flex items-center gap-1">
+            <button 
+              onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === 1 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#eb4438] hover:bg-[#eb4438]/10'
+              }`}
+              aria-label="Previous page"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            
+            {pageNumbers.map(number => (
+              <button
+                key={number}
+                onClick={() => paginate(number)}
+                className={`w-10 h-10 rounded-md flex items-center justify-center ${
+                  currentPage === number
+                    ? 'bg-[#eb4438] text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-[#eb4438]/10'
+                }`}
+              >
+                {number}
+              </button>
+            ))}
+            
+            <button 
+              onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === totalPages 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#eb4438] hover:bg-[#eb4438]/10'
+              }`}
+              aria-label="Next page"
+            >
+              <ArrowRight className="h-5 w-5 transform rotate-180" />
+            </button>
+          </nav>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function VideoProductionPage() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -323,32 +517,8 @@ export default function VideoProductionPage() {
       {/* Video Equipment Section */}
       <VideoEquipment />
       
-      {/* Featured Projects Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">أعــمــالــنــا <span className="text-[#eb4438]">المــمــيــزة</span></h2>
-            <p className="text-muted-foreground">
-              نــمــاذج مــن أحــدث الفــيــديــوهــات الــتــي أنــتــجــنــاهــا لــعــمــلائــنــا
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Button asChild className="bg-[#eb4438] hover:bg-[#eb4438]/90">
-              <Link href="/portfolio">
-                مشاهدة جميع الأعمال
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Portfolio Gallery Section with Pagination */}
+      <PortfolioGallery />
       
       {/* Production Process */}
       <section className="py-16 bg-muted/30">

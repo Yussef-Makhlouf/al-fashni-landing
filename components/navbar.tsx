@@ -15,6 +15,7 @@ export function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [activeServicesMobile, setActiveServicesMobile] = useState(false)
   const pathname = usePathname()
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +37,31 @@ export function Navbar() {
       document.body.style.overflow = 'unset'
     }
   }, [isMenuOpen])
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout)
+      }
+    }
+  }, [closeTimeout])
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout)
+      setCloseTimeout(null)
+    }
+    setIsServicesOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsServicesOpen(false)
+    }, 800) // 800ms delay before closing
+    
+    setCloseTimeout(timeout)
+  }
 
   const serviceLinks = [
     { href: "/services/web-development", label: "تــطــويــر المــواقــع" },
@@ -88,8 +114,8 @@ export function Navbar() {
             {/* Services dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <div className="flex items-center px-3 py-2 text-foreground hover:text-[#186af2] rounded-md text-sm font-medium transition-colors cursor-pointer">
                 <Link 

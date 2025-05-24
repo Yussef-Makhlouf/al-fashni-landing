@@ -153,6 +153,113 @@ const featuredProjects: ProjectProps[] = [
   }
 ];
 
+// Extended Portfolio Projects - Add more projects for pagination
+const allPortfolioProjects: ProjectProps[] = [
+  ...featuredProjects,
+  {
+    title: "تصميم موقع إلكتروني",
+    description: "تصميم واجهة مستخدم لموقع إلكتروني لشركة خدمات مالية",
+    image: "/portfolio/design-project-4.jpg",
+    tags: ["UI/UX", "موقع إلكتروني", "تصميم"]
+  },
+  {
+    title: "تصميم تطبيق جوال",
+    description: "تصميم واجهة مستخدم لتطبيق جوال لخدمات التوصيل",
+    image: "/portfolio/design-project-5.jpg",
+    tags: ["تطبيقات", "UI/UX", "تصميم"]
+  },
+  {
+    title: "هوية بصرية لمطعم",
+    description: "تصميم هوية بصرية متكاملة لسلسلة مطاعم جديدة",
+    image: "/portfolio/design-project-6.jpg",
+    tags: ["هوية بصرية", "مطاعم", "شعار"]
+  },
+  {
+    title: "تصميم عبوات منتجات",
+    description: "تصميم عبوات منتجات لشركة مستحضرات تجميل طبيعية",
+    image: "/portfolio/design-project-7.jpg",
+    tags: ["تغليف", "منتجات", "تصميم"]
+  },
+  {
+    title: "تصميم بروشور تعريفي",
+    description: "تصميم بروشور تعريفي لشركة استشارات هندسية",
+    image: "/portfolio/design-project-8.jpg",
+    tags: ["مطبوعات", "بروشور", "تصميم"]
+  },
+  {
+    title: "تصميم منشورات إعلانية",
+    description: "تصميم سلسلة منشورات إعلانية لحملة تسويقية على فيسبوك وانستغرام",
+    image: "/portfolio/design-project-9.jpg",
+    tags: ["إعلانات", "سوشيال ميديا", "تصميم"]
+  },
+  {
+    title: "تصميم معرض افتراضي",
+    description: "تصميم معرض افتراضي ثلاثي الأبعاد لعرض منتجات شركة أثاث",
+    image: "/portfolio/design-project-10.jpg",
+    tags: ["3D", "معارض", "تصميم"]
+  },
+  {
+    title: "تصميم مجلة إلكترونية",
+    description: "تصميم مجلة إلكترونية متخصصة في مجال الموضة والأزياء",
+    image: "/portfolio/design-project-11.jpg",
+    tags: ["نشر إلكتروني", "مجلات", "تصميم"]
+  },
+  {
+    title: "تصميم لوحات إعلانية",
+    description: "تصميم مجموعة لوحات إعلانية خارجية لحملة تسويقية",
+    image: "/portfolio/design-project-12.jpg",
+    tags: ["إعلانات خارجية", "لوحات", "تصميم"]
+  },
+  {
+    title: "تصميم تقرير سنوي",
+    description: "تصميم تقرير سنوي احترافي لشركة استثمارية",
+    image: "/portfolio/design-project-13.jpg",
+    tags: ["تقارير", "مطبوعات", "تصميم"]
+  },
+  {
+    title: "تصميم قوالب عروض تقديمية",
+    description: "تصميم قوالب عروض تقديمية احترافية لشركة استشارات",
+    image: "/portfolio/design-project-14.jpg",
+    tags: ["عروض تقديمية", "قوالب", "تصميم"]
+  },
+  {
+    title: "تصميم أغلفة كتب",
+    description: "تصميم مجموعة أغلفة كتب لدار نشر متخصصة",
+    image: "/portfolio/design-project-15.jpg",
+    tags: ["كتب", "أغلفة", "تصميم"]
+  },
+  {
+    title: "تصميم بطاقات أعمال",
+    description: "تصميم بطاقات أعمال وأوراق رسمية لشركة محاماة",
+    image: "/portfolio/design-project-16.jpg",
+    tags: ["هوية بصرية", "مطبوعات", "تصميم"]
+  },
+  {
+    title: "تصميم منيو مطعم",
+    description: "تصميم منيو احترافي لمطعم فاخر مع تصوير المنتجات",
+    image: "/portfolio/design-project-17.jpg",
+    tags: ["مطاعم", "منيو", "تصميم"]
+  },
+  {
+    title: "تصميم تقويم سنوي",
+    description: "تصميم تقويم سنوي لشركة كبرى كهدية للعملاء",
+    image: "/portfolio/design-project-18.jpg",
+    tags: ["تقويم", "هدايا", "تصميم"]
+  },
+  {
+    title: "تصميم شعارات متنوعة",
+    description: "تصميم مجموعة شعارات لشركات ناشئة في مختلف المجالات",
+    image: "/portfolio/design-project-19.jpg",
+    tags: ["شعارات", "هوية بصرية", "تصميم"]
+  },
+  {
+    title: "تصميم موقع متجر إلكتروني",
+    description: "تصميم واجهة مستخدم لمتجر إلكتروني متخصص في الأزياء",
+    image: "/portfolio/design-project-20.jpg",
+    tags: ["UI/UX", "متاجر إلكترونية", "تصميم"]
+  }
+];
+
 // Design Tools Component
 function DesignTools() {
   const tools = [
@@ -260,6 +367,93 @@ function ProjectCard({ project }: { project: ProjectProps }) {
   );
 }
 
+// Portfolio Gallery with Pagination Component
+function PortfolioGallery() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+  
+  // Calculate total pages
+  const totalPages = Math.ceil(allPortfolioProjects.length / projectsPerPage);
+  
+  // Get current projects
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = allPortfolioProjects.slice(indexOfFirstProject, indexOfLastProject);
+  
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  
+  // Generate page numbers array
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+  
+  return (
+    <section className="py-16">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">معــرض <span className="text-[#fabc05]">أعــمــالــنــا</span></h2>
+          <p className="text-muted-foreground">
+            نــمــاذج مــن أحــدث تــصــامــيــمــنــا الــتــي نــفــذنــاهــا لــعــمــلائــنــا فــي مــخــتــلــف المــجــالات
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentProjects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+        
+        {/* Pagination */}
+        <div className="mt-12 flex justify-center">
+          <nav className="flex items-center gap-1">
+            <button 
+              onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === 1 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#fabc05] hover:bg-[#fabc05]/10'
+              }`}
+              aria-label="Previous page"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            
+            {pageNumbers.map(number => (
+              <button
+                key={number}
+                onClick={() => paginate(number)}
+                className={`w-10 h-10 rounded-md flex items-center justify-center ${
+                  currentPage === number
+                    ? 'bg-[#fabc05] text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-[#fabc05]/10'
+                }`}
+              >
+                {number}
+              </button>
+            ))}
+            
+            <button 
+              onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === totalPages 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#fabc05] hover:bg-[#fabc05]/10'
+              }`}
+              aria-label="Next page"
+            >
+              <ArrowRight className="h-5 w-5 transform rotate-180" />
+            </button>
+          </nav>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function GraphicDesignPage() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -318,32 +512,8 @@ export default function GraphicDesignPage() {
       {/* Design Tools Section */}
       <DesignTools />
       
-      {/* Featured Projects Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">أعــمــالــنــا <span className="text-[#fabc05]">المــمــيــزة</span></h2>
-            <p className="text-muted-foreground">
-              نــمــاذج مــن أحــدث تــصــامــيــمــنــا الــتــي نــفــذنــاهــا لــعــمــلائــنــا فــي مــخــتــلــف المــجــالات
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Button asChild className="bg-[#fabc05] hover:bg-[#fabc05]/90">
-              <Link href="/portfolio">
-                عرض جميع الأعمال
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Portfolio Gallery Section with Pagination */}
+      <PortfolioGallery />
       
       {/* Design Process */}
       <section className="py-16 bg-muted/30">

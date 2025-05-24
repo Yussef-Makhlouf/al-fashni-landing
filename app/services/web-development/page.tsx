@@ -154,6 +154,113 @@ const featuredProjects: ProjectProps[] = [
   }
 ];
 
+// Extended Portfolio Projects - Add more projects for pagination
+const allPortfolioProjects: ProjectProps[] = [
+  ...featuredProjects,
+  {
+    title: "نظام إدارة المحتوى",
+    description: "تطوير نظام إدارة محتوى مخصص لشركة إعلامية كبيرة",
+    image: "/portfolio/web-project-4.jpg",
+    tags: ["Next.js", "GraphQL", "PostgreSQL"]
+  },
+  {
+    title: "منصة تداول إلكترونية",
+    description: "تطوير منصة تداول مالي مع واجهة مستخدم متقدمة وتحليلات مباشرة",
+    image: "/portfolio/web-project-5.jpg",
+    tags: ["React", "WebSockets", "Redux"]
+  },
+  {
+    title: "تطبيق خدمات طبية",
+    description: "تطبيق ويب وموبايل لحجز المواعيد الطبية ومتابعة الحالات",
+    image: "/portfolio/web-project-6.jpg",
+    tags: ["React Native", "Node.js", "MongoDB"]
+  },
+  {
+    title: "منصة تعليم إلكتروني",
+    description: "منصة تعليمية تفاعلية مع دعم للدروس المباشرة والاختبارات",
+    image: "/portfolio/web-project-7.jpg",
+    tags: ["Vue.js", "Laravel", "MySQL"]
+  },
+  {
+    title: "نظام إدارة العقارات",
+    description: "نظام متكامل لإدارة العقارات والإيجارات مع لوحة تحكم متقدمة",
+    image: "/portfolio/web-project-8.jpg",
+    tags: ["Angular", "Express", "MongoDB"]
+  },
+  {
+    title: "منصة توظيف متخصصة",
+    description: "منصة لربط الشركات بالمطورين والمصممين مع نظام تقييم متقدم",
+    image: "/portfolio/web-project-9.jpg",
+    tags: ["React", "Node.js", "PostgreSQL"]
+  },
+  {
+    title: "تطبيق إدارة المخزون",
+    description: "نظام لإدارة المخزون والمبيعات مع تقارير تحليلية متقدمة",
+    image: "/portfolio/web-project-10.jpg",
+    tags: ["React", "Express", "MongoDB"]
+  },
+  {
+    title: "منصة بث مباشر",
+    description: "منصة بث فيديو مباشر مع دعم للتفاعل والتعليقات المباشرة",
+    image: "/portfolio/web-project-11.jpg",
+    tags: ["React", "WebRTC", "Socket.io"]
+  },
+  {
+    title: "نظام إدارة المطاعم",
+    description: "نظام متكامل لإدارة المطاعم والطلبات والحجوزات",
+    image: "/portfolio/web-project-12.jpg",
+    tags: ["Vue.js", "Node.js", "MongoDB"]
+  },
+  {
+    title: "منصة تسويق رقمي",
+    description: "منصة لإدارة حملات التسويق الرقمي وتحليل النتائج",
+    image: "/portfolio/web-project-13.jpg",
+    tags: ["React", "Python", "PostgreSQL"]
+  },
+  {
+    title: "تطبيق إدارة المشروعات الهندسية",
+    description: "نظام متخصص لإدارة المشروعات الهندسية والإنشائية",
+    image: "/portfolio/web-project-14.jpg",
+    tags: ["Angular", "Django", "PostgreSQL"]
+  },
+  {
+    title: "منصة تعاون عن بعد",
+    description: "منصة للعمل والتعاون عن بعد مع أدوات اتصال وإدارة مهام",
+    image: "/portfolio/web-project-15.jpg",
+    tags: ["React", "Node.js", "Socket.io"]
+  },
+  {
+    title: "نظام إدارة المدارس",
+    description: "نظام شامل لإدارة المدارس والطلاب والمناهج والدرجات",
+    image: "/portfolio/web-project-16.jpg",
+    tags: ["Vue.js", "Laravel", "MySQL"]
+  },
+  {
+    title: "منصة خدمات قانونية",
+    description: "منصة لتقديم الاستشارات القانونية وإدارة القضايا",
+    image: "/portfolio/web-project-17.jpg",
+    tags: ["Next.js", "Express", "MongoDB"]
+  },
+  {
+    title: "تطبيق إدارة العيادات",
+    description: "نظام متكامل لإدارة العيادات الطبية والمرضى والمواعيد",
+    image: "/portfolio/web-project-18.jpg",
+    tags: ["React", "Node.js", "PostgreSQL"]
+  },
+  {
+    title: "منصة تداول العملات الرقمية",
+    description: "منصة لتداول العملات الرقمية مع تحليلات فنية متقدمة",
+    image: "/portfolio/web-project-19.jpg",
+    tags: ["React", "Node.js", "WebSockets"]
+  },
+  {
+    title: "نظام إدارة المكتبات",
+    description: "نظام متكامل لإدارة المكتبات والكتب والاستعارات",
+    image: "/portfolio/web-project-20.jpg",
+    tags: ["Vue.js", "Express", "MongoDB"]
+  }
+];
+
 // Technology Stack Component
 function TechnologyStack() {
   const technologies = [
@@ -263,6 +370,93 @@ function ProjectCard({ project }: { project: ProjectProps }) {
   );
 }
 
+// Portfolio Gallery with Pagination Component
+function PortfolioGallery() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+  
+  // Calculate total pages
+  const totalPages = Math.ceil(allPortfolioProjects.length / projectsPerPage);
+  
+  // Get current projects
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = allPortfolioProjects.slice(indexOfFirstProject, indexOfLastProject);
+  
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  
+  // Generate page numbers array
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+  
+  return (
+    <section className="py-16">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">معــرض <span className="text-[#186af2]">أعــمــالــنــا</span></h2>
+          <p className="text-muted-foreground">
+            نــمــاذج مــن أحــدث مــشــاريــعــنــا فــي مــجــال تــطــويــر المــواقــع والتــطــبــيــقــات البــرمــجــيــة
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {currentProjects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+        
+        {/* Pagination */}
+        <div className="mt-12 flex justify-center">
+          <nav className="flex items-center gap-1">
+            <button 
+              onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === 1 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#186af2] hover:bg-[#186af2]/10'
+              }`}
+              aria-label="Previous page"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            
+            {pageNumbers.map(number => (
+              <button
+                key={number}
+                onClick={() => paginate(number)}
+                className={`w-10 h-10 rounded-md flex items-center justify-center ${
+                  currentPage === number
+                    ? 'bg-[#186af2] text-white'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-[#186af2]/10'
+                }`}
+              >
+                {number}
+              </button>
+            ))}
+            
+            <button 
+              onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-md flex items-center justify-center ${
+                currentPage === totalPages 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-[#186af2] hover:bg-[#186af2]/10'
+              }`}
+              aria-label="Next page"
+            >
+              <ArrowRight className="h-5 w-5 transform rotate-180" />
+            </button>
+          </nav>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function WebDevelopmentPage() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -321,32 +515,8 @@ export default function WebDevelopmentPage() {
       {/* Technology Stack Section */}
       <TechnologyStack />
       
-      {/* Featured Projects Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">مــشــاريــعــنــا <span className="text-[#186af2]">المــمــيــزة</span></h2>
-            <p className="text-muted-foreground">
-              نــمــاذج مــن أحــدث مــشــاريــعــنــا فــي مــجــال تــطــويــر المــواقــع والتــطــبــيــقــات البــرمــجــيــة
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Button asChild className="bg-[#186af2] hover:bg-[#186af2]/90">
-              <Link href="/portfolio">
-                عرض جميع المشاريع
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Portfolio Gallery Section with Pagination */}
+      <PortfolioGallery />
       
       {/* Development Process */}
       <section className="py-16 bg-muted/30">
