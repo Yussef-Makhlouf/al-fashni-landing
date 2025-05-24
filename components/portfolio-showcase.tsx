@@ -144,7 +144,7 @@ export function PortfolioShowcase() {
           transition={{ duration: 0.6 }}
         >
           <Badge className="mb-4 bg-blue-600/10 text-blue-600 hover:bg-blue-600/20 dark:bg-blue-500/20 dark:text-blue-400">سجل إنجازاتنا</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-[#186af2]">
             المشاريع التي قمنا بتنفيذها
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl">
