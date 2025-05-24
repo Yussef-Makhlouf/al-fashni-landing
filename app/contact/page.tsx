@@ -220,7 +220,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">رقم الهاتف</h3>
-                      <p className="text-muted-foreground mt-1">+966 50 123 4567</p>
+                      <p className="text-muted-foreground mt-1 " dir="ltr">+966 565265233</p>
                     </div>
                   </div>
                   
@@ -233,7 +233,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">البريد الإلكتروني</h3>
-                      <p className="text-muted-foreground mt-1">info@alfashni.com</p>
+                      <p className="text-muted-foreground mt-1">info@fashni.com</p>
                     </div>
                   </div>
                   
@@ -246,8 +246,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">العنوان</h3>
-                      <p className="text-muted-foreground mt-1">الرياض، المملكة العربية السعودية</p>
-                    </div>
+                      <p className="text-muted-foreground mt-1">نــغــطــي جــمــيــع أنــحــاء الــوطــن الــعــربــي</p>
+                      </div>
                   </div>
                 </div>
               </motion.div>

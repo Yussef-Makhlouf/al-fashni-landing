@@ -182,7 +182,7 @@ export default function AboutPage() {
             <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border group hover:border-[#186af2]/50 transition-all">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=400&width=300"
+                  src="/mainlogo.jpeg"
                   alt="عضو الفريق"
                   width={300}
                   height={400}
@@ -200,7 +200,7 @@ export default function AboutPage() {
             <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border group hover:border-[#186af2]/50 transition-all">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=400&width=300"
+                 src="/mainlogo.jpeg"
                   alt="عضو الفريق"
                   width={300}
                   height={400}
@@ -218,7 +218,7 @@ export default function AboutPage() {
             <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border group hover:border-[#186af2]/50 transition-all">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=400&width=300"
+                  src="/mainlogo.jpeg"
                   alt="عضو الفريق"
                   width={300}
                   height={400}
@@ -235,7 +235,7 @@ export default function AboutPage() {
                         <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border group hover:border-[#186af2]/50 transition-all">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=400&width=300"
+          src="/mainlogo.jpeg"
                   alt="عضو الفريق"
                   width={300}
                   height={400}
@@ -252,7 +252,7 @@ export default function AboutPage() {
             <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border group hover:border-[#186af2]/50 transition-all">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=400&width=300"
+    src="/mainlogo.jpeg"
                   alt="عضو الفريق"
                   width={300}
                   height={400}
