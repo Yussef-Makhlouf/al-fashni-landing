@@ -15,7 +15,7 @@ export function Footer() {
           <div className="mb-8 lg:mb-0">
             <h3 className="text-2xl font-bold mb-4 text-[#186af2]">الــفــشــنــي</h3>
             <p className="text-muted-foreground max-w-md">
-              شــركــة رائــدة فــي مــجــال الإعــلان والعــلاقــات العــامــة، نــقــدم حــلــولاً إبــداعــيــة مــتــكــامــلــة لــعــمــلائــنــا.
+              شــركــة رائــدة فــي مــجــال التـــسويق الــرقــــمي، نــقــدم حــلــولاً إبــداعــيــة مــتــكــامــلــة لــعــمــلائــنــا.
             </p>
           </div>
           
@@ -106,7 +106,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">اتصل بنا</p>
-                  <p className="text-foreground">+966 123 456 789</p>
+                  <p className="text-foreground" dir="ltr">+966 565265233</p>
                 </div>
               </li>
               <li className="flex items-start">
@@ -115,7 +115,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">البريد الإلكتروني</p>
-                  <p className="text-foreground">info@al-fashni.com</p>
+                  <p className="text-foreground">info@fashni.net</p>
                 </div>
               </li>
               <li className="flex items-start">
@@ -124,7 +124,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">العنوان</p>
-                  <p className="text-foreground">الــريــاض، المــمــلــكــة العــربــيــة الســعــوديــة</p>
+                  <p className="text-foreground">نــغــطــي جــمــيــع أنــحــاء الــوطــن الــعــربــي</p>
                 </div>
               </li>
             </ul>
@@ -135,7 +135,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} شــركــة الــفــشــنــي للإعــلان والعــلاقــات العــامــة. جــمــيــع الحــقــوق مــحــفــوظــة.
+            &copy; {new Date().getFullYear()} شــركــة الــفــشــنــي التـــسويق الــرقــــمي. جــمــيــع الحــقــوق مــحــفــوظــة.
           </p>
           <div className="flex space-x-4 space-x-reverse mt-4 md:mt-0">
             <Link href="/privacy-policy" className="text-muted-foreground hover:text-[#186af2] text-sm transition-colors duration-300">

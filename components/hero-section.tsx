@@ -24,7 +24,7 @@ export function HeroSection() {
               <br className="hidden md:block" />تتـــجــاوز التــوقعــات وتــلهـم الإبـــداع
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl md:mr-0 mx-auto">
-              شــركــة الفــشــني للإعــلان والعــلاقــات العــامــة، نــقــدم حــلــولاً إبــداعــيــة مــتــكــامــلــة تــســاعــد عــلامــتــك التــجــاريــة عــلى التــألــق والنــمــو
+              شــركــة الفــشــني التـــسويق الــرقــــمي، نــقــدم حــلــولاً إبــداعــيــة مــتــكــامــلــة تــســاعــد عــلامــتــك التــجــاريــة عــلى التــألــق والنــمــو
               فــي العــالــم الــرقــمــي بــأســالــيــب مــبــتــكــرة وفــعّــالــة
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-end">
@@ -45,13 +45,22 @@ export function HeroSection() {
           <div className="flex-1 relative">
             <div className="relative z-10 rounded-xl overflow-hidden shadow-lg card-hover">
               <div className="absolute inset-0 transition-opacity z-10"></div>
-              <Image
-                src="/main-logo.png"
-                alt="الفشني للإعلان والعلاقات العامة"
-                width={600}
-                height={600}
-                className="w-full h-auto"
-              />
+              <div className="relative w-full aspect-square max-w-[600px] mx-auto">
+                <div className="absolute inset-0 bg-[#186af2]/5 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#186af2]/10 via-[#ea4235]/10 to-[#fabc05]/10 rounded-full animate-spin-slow"></div>
+                <Image
+                  src="/main-logo.png"
+                  alt="الفشني للإعلان والعلاقات العامة"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  priority
+                  className="object-contain px-10 hover:scale-105 transition-transform duration-500 bg-white relative z-10"
+                  quality={100}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#186af2]/20 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#ea4235]/20 rounded-full blur-xl animate-pulse delay-300"></div>
+              </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
                 <h3 className="font-bold text-xl text-foreground">رؤيــتــنــا الإبــداعــيــة</h3>
                 <p className="text-sm text-muted-foreground">نــجــمــع بــيــن الإبــداع والاســتــراتــيــجــيــة لــبــنــاء هــويــة عــلامــتــك التــجــاريــة</p>
@@ -69,7 +78,7 @@ export function HeroSection() {
               </div>
               <div>
                 <h3 className="font-bold text-foreground">اتــصــل بــنــا</h3>
-                <p className="text-muted-foreground text-sm">+966 123 456 789</p>
+                <p className="text-muted-foreground text-sm" dir="ltr">+966 565265233</p>
               </div>
             </div>
           </div>
@@ -80,7 +89,7 @@ export function HeroSection() {
               </div>
               <div>
                 <h3 className="font-bold text-foreground">البــريــد الإلــكــتــرونــي</h3>
-                <p className="text-muted-foreground text-sm">info@al-fashni.com</p>
+                <p className="text-muted-foreground text-sm">info@fashni.net</p>
               </div>
             </div>
           </div>
@@ -91,7 +100,7 @@ export function HeroSection() {
               </div>
               <div>
                 <h3 className="font-bold text-foreground">العــنــوان</h3>
-                <p className="text-muted-foreground text-sm">الــريــاض، المــمــلــكــة العــربــيــة الســعــوديــة</p>
+                <p className="text-muted-foreground text-sm">نــغــطــي جــمــيــع أنــحــاء الــوطــن الــعــربــي</p>
               </div>
             </div>
           </div>

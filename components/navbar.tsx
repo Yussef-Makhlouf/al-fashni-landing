@@ -40,7 +40,7 @@ export function Navbar() {
               height={100}
               className="w-50 h-50"
             />
-            <span className="text-2xl font-bold text-[#186af2] pulse-glow">الــفــشــنــي</span>
+            {/* <span className="text-2xl font-bold text-[#186af2] pulse-glow">الــفــشــنــي</span> */}
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1 space-x-reverse">
