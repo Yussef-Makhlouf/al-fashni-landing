@@ -1,11 +1,12 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/hero-section"
-import { FeaturedProjects } from "@/components/featured-projects"
 import { CtaBanner } from "@/components/cta-banner"
 import { ServicesSection } from "@/components/services-section"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { PortfolioShowcase } from "@/components/portfolio-showcase"
+import { FeaturedProjects } from "@/components/featured-projects"
 
 export default function Home() {
   return (

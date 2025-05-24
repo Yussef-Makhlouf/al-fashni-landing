@@ -5,17 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
-
-export const categories = [
-  { id: "all", name: "الــكــل" },
-  { id: "web-development", name: "تــطــويــر الــويــب" },
-  { id: "ecommerce", name: "التــجــارة الإلــكــتــرونــيــة" },
-  { id: "digital-marketing", name: "التــســويــق الــرقــمــي" },
-  { id: "mobile-apps", name: "تــطــبــيــقــات الــجــوال" },
-  { id: "branding", name: "الــهــويــة البــصــريــة" },
-  { id: "advertising", name: "الإعــلان" },
-  { id: "seo", name: "تــحــســيــن مــحــركــات البــحــث" },
-]
+import { categories } from "@/data/categories"
 
 export type PortfolioFiltersProps = {
   onFilterChange: (category: string, searchQuery: string) => void

@@ -1,21 +1,11 @@
 "use client"
 
-import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { PortfolioFilters } from "@/components/portfolio-filters"
-import { PortfolioGrid } from "@/components/portfolio-grid"
+import { PortfolioShowcase } from "@/components/portfolio-showcase"
 import { CtaBanner } from "@/components/cta-banner"
 
 export default function PortfolioPage() {
-  const [activeCategory, setActiveCategory] = useState("all")
-  const [searchQuery, setSearchQuery] = useState("")
-
-  const handleFilterChange = (category: string, query: string) => {
-    setActiveCategory(category)
-    setSearchQuery(query)
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -42,13 +32,8 @@ export default function PortfolioPage() {
         </div>
       </section>
       
-      {/* Portfolio Section */}
-      <section className="py-16">
-        <div className="container px-4 mx-auto">
-          <PortfolioFilters onFilterChange={handleFilterChange} />
-          <PortfolioGrid categoryFilter={activeCategory} searchQuery={searchQuery} />
-        </div>
-      </section>
+      {/* Portfolio Showcase Section */}
+      <PortfolioShowcase />
       
       {/* CTA Banner */}
       <CtaBanner 

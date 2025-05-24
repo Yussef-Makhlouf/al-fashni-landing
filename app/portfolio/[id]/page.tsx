@@ -7,83 +7,10 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight, Calendar, User, Tag, ArrowLeft, ExternalLink, ChevronDown, CheckCircle, Clock, BarChart } from "lucide-react"
-import { projects, type Project } from "@/components/portfolio-grid"
+import { projects, type Project } from "@/data/projects"
+import { projectDetails, type ProjectDetails } from "@/data/project-details"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
-
-// Add additional project details for the expanded view
-type ProjectDetails = {
-  timeframe?: string
-  teamSize?: number
-  technologies?: string[]
-  objectives?: string[]
-  achievements?: string[]
-  testimonial?: {
-    quote: string
-    author: string
-    position: string
-  }
-  gallery?: string[]
-}
-
-// Sample project details data (this would typically come from an API or database)
-const projectDetails: Record<number, ProjectDetails> = {
-  1: {
-    timeframe: "3 أشهر",
-    teamSize: 5,
-    technologies: ["React", "Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-    objectives: [
-      "تطوير واجهة مستخدم سهلة الاستخدام ومتجاوبة مع جميع الأجهزة",
-      "تحسين سرعة تحميل الموقع وأدائه",
-      "تكامل مع أنظمة الدفع وقواعد البيانات",
-      "تطوير لوحة تحكم إدارية متكاملة"
-    ],
-    achievements: [
-      "زيادة في معدل تحويل الزوار بنسبة 35%",
-      "تحسين تجربة المستخدم وسهولة التنقل في الموقع",
-      "زيادة في متوسط وقت البقاء على الموقع بنسبة 42%",
-      "تحسين الأداء وسرعة التحميل بنسبة 60%"
-    ],
-    testimonial: {
-      quote: "لقد تخطى فريق العمل توقعاتنا في هذا المشروع. ساهم الموقع الجديد في تعزيز تواجدنا الرقمي وزيادة المبيعات بشكل ملحوظ.",
-      author: "محمد السعيد",
-      position: "المدير التنفيذي، شركة التقنية المتطورة"
-    },
-    gallery: [
-      "/placeholder.svg?height=600&width=800&text=Screenshot1",
-      "/placeholder.svg?height=600&width=800&text=Screenshot2",
-      "/placeholder.svg?height=600&width=800&text=Screenshot3"
-    ]
-  },
-  // Add details for other projects as needed
-  2: {
-    timeframe: "4 أشهر",
-    teamSize: 6,
-    technologies: ["React", "Next.js", "Stripe", "Firebase", "Tailwind CSS"],
-    objectives: [
-      "تطوير متجر إلكتروني متكامل مع نظام دفع آمن",
-      "إنشاء نظام إدارة مخزون فعال",
-      "تحسين تجربة التسوق على جميع الأجهزة",
-      "تكامل مع منصات التواصل الاجتماعي"
-    ],
-    achievements: [
-      "زيادة المبيعات بنسبة 50% في الربع الأول",
-      "تقليل معدل التخلي عن عربة التسوق بنسبة 30%",
-      "زيادة متوسط قيمة الطلب بنسبة 25%",
-      "تحسين معدل الاحتفاظ بالعملاء بنسبة 40%"
-    ],
-    testimonial: {
-      quote: "ساعدنا المتجر الإلكتروني الجديد على توسيع نطاق أعمالنا وخدمة عملاء جدد. نحن سعداء جدًا بالنتائج.",
-      author: "سارة الخالدي",
-      position: "مديرة التسويق، مؤسسة الأناقة للأزياء"
-    },
-    gallery: [
-      "/placeholder.svg?height=600&width=800&text=Ecommerce1",
-      "/placeholder.svg?height=600&width=800&text=Ecommerce2",
-      "/placeholder.svg?height=600&width=800&text=Ecommerce3"
-    ]
-  },
-}
 
 export default function ProjectDetailPage() {
   const params = useParams()
