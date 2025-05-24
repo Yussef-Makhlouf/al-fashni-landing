@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   description: "شركة الفشني للتسويق الرقمي - معرض أعمالنا ومشاريعنا",
   icons: {
     icon: "/logo.png",
-    
+        
   },
 }
 
